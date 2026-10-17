@@ -1,0 +1,40 @@
+{
+  "as_of": "2026-10-18 Asia/Shanghai",
+  "node": "v23.11.0",
+  "tests": {
+    "command": "npm test",
+    "passed": 10,
+    "failed": 0,
+    "mode": "mocked transport; no browser or API inference"
+  },
+  "checks": [
+    "node --check client.mjs",
+    "node --check app.mjs",
+    "python3 scripts/check_manifest.py",
+    "git diff --check"
+  ],
+  "artifact": {
+    "path": "artifacts/suno-static-space.zip",
+    "sha256": "72b2db1248e08cc9a29f023d0bb8a7fda0533ebc90902c5437821c5ae21f38ca",
+    "files": [
+      "README.md",
+      "index.html",
+      "client.mjs",
+      "app.mjs",
+      "styles.css",
+      "LICENSE",
+      "PRIVACY.md",
+      "readme/README_zh_Hans.md",
+      "assets/get-api-key-en.png",
+      "assets/create-api-key-en.png",
+      "docs/asset-sources.json",
+      "docs/PUBLISHING.md",
+      "docs/VALIDATION.md",
+      "docs/API_CONTRACT.md"
+    ]
+  },
+  "generation_calls": 0,
+  "authenticated_task_queries": 0,
+  "publication": "not uploaded or deployed; no Space URL verified",
+  "ui_acceptance": "queued for coordinator; no fabricated screenshot"
+}

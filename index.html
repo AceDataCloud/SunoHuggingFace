@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src https://api.acedata.cloud; media-src https:; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="Suno music generation and same-task audio retrieval, provided by Ace Data Cloud. Bring your own Ace application API token.">
+  <title>Suno by Ace Data Cloud</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.mjs"></script>
+</head>
+<body>
+<main>
+  <header><div><h1>Suno by Ace Data Cloud</h1><p>Music from a prompt. Follow one task to the finished audio.</p></div></header>
+  <p>Independent integration provided by Ace Data Cloud. Not affiliated with or endorsed by Suno or Hugging Face.</p>
+  <nav aria-label="Setup"><a data-cta="api-key" href="https://platform.acedata.cloud/console/applications">Get an Ace API token</a><a data-cta="pricing" href="https://platform.acedata.cloud/models">Current pricing</a><a href="https://github.com/AceDataCloud/SunoHuggingFace/blob/main/readme/README_zh_Hans.md" target="_blank" rel="noopener noreferrer">中文指南</a></nav>
+  <section aria-labelledby="token-heading"><h2 id="token-heading">1. Connect your Ace account</h2>
+    <p>Sign in → Applications → General application → copy API Key, or Manage Keys → Create. Check Suno access, expiry, Allowed APIs and balance. Allow both <code>/suno/audios</code> and <code>/suno/tasks</code>.</p>
+    <label for="token">Ace application API token</label><input id="token" type="password" autocomplete="off" spellcheck="false" placeholder="Paste token only, without Bearer">
+    <button id="clear-token" type="button" class="secondary">Clear token</button>
+    <p class="note">The token stays in this tab's memory and is sent only to api.acedata.cloud. No shared owner key, cookies or browser storage are used. Generation uses your Ace balance; HF credits do not apply.</p>
+  </section>
+  <section aria-labelledby="query-heading"><h2 id="query-heading">2. Retrieve an existing task</h2>
+    <p>Already submitted a song? Query that same task ID. A preview audio URL does not mean completion.</p>
+    <form id="query-form"><label for="task-id">Suno task ID</label><input id="task-id" autocomplete="off" spellcheck="false" maxlength="200" required><button id="query" type="submit">Retrieve same task</button></form>
+    <p>Queries are manual and at least 15 seconds apart. Keep the ID if the tab is closed. No new generation is submitted by this button.</p>
+  </section>
+  <details><summary>Create new music — uses your Ace balance</summary><section aria-labelledby="generation-heading"><h2 id="generation-heading">Create one Suno task</h2>
+    <form id="generation-form">
+      <label for="model">Model</label><select id="model"><option>chirp-v6</option><option>chirp-v6-wild</option><option>chirp-v6-mini</option></select>
+      <label for="prompt">Describe your music (up to 500 characters)</label><textarea id="prompt" rows="4" maxlength="500" required placeholder="A gentle instrumental piano melody for a sunrise, no vocals."></textarea>
+      <label class="checkbox"><input id="instrumental" type="checkbox" checked> Instrumental (no vocals)</label>
+      <label class="checkbox"><input id="acknowledge" type="checkbox" required> I checked current pricing, access and balance, have permission to use these inputs, and authorize this single potentially billable generation.</label>
+      <button id="generate" type="submit">Generate once — uses Ace balance</button>
+    </form>
+    <p>No automatic retry or model replacement. Pending or uncertain submissions block another generation. Check Ace request history if the connection fails.</p>
+    <button id="new-task" type="button" class="secondary">I reviewed history — prepare another task</button>
+  </section></details>
+  <section aria-labelledby="result-heading"><h2 id="result-heading">3. Status and final audio</h2>
+    <p id="status" role="status" aria-live="polite">No request has been sent. Start with an existing task ID or explicitly create a new task.</p>
+    <p id="identity"></p><div id="tracks"></div>
+    <p>Only a terminal successful result exposes playable audio here. Check the corresponding task/trace in Ace request history for the actual charge; this page does not claim a verified invoice.</p>
+  </section>
+  <footer><a href="https://github.com/AceDataCloud/SunoHuggingFace" target="_blank" rel="noopener noreferrer">Source</a> · <a href="https://github.com/AceDataCloud/SunoHuggingFace/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">Privacy</a> · <a href="https://github.com/AceDataCloud/SunoHuggingFace/issues" target="_blank" rel="noopener noreferrer">Support</a></footer>
+</main>
+</body>
+</html>

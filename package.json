@@ -1,0 +1,12 @@
+{
+  "name": "suno-hugging-face-space",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check client.mjs && node --check app.mjs && python3 scripts/check_manifest.py"
+  },
+  "engines": { "node": ">=20" },
+  "license": "MIT"
+}

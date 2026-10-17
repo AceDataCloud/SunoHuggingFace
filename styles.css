@@ -1,0 +1,24 @@
+:root { color-scheme: light dark; font: 16px/1.6 system-ui, sans-serif; }
+body { margin: 0; background: light-dark(#f4f6fa, #111827); color: light-dark(#162238, #e5e7eb); }
+main { max-width: 850px; margin: auto; padding: 28px 18px 48px; }
+header { display: flex; gap: 16px; align-items: center; }
+h1 { font-size: 1.9rem; line-height: 1.2; margin: 0; }
+h2 { font-size: 1.25rem; }
+header p { margin-bottom: 0; }
+section, details { border: 1px solid light-dark(#ccd4e0, #4b5563); border-radius: 12px; padding: 18px; margin: 20px 0; background: light-dark(white, #1f2937); }
+details section { border: none; margin: 0; padding: 10px 0 0; }
+summary { cursor: pointer; font-weight: 650; }
+nav { display: flex; gap: 16px; flex-wrap: wrap; }
+a { color: light-dark(#154fbd, #93c5fd); }
+label { display: block; font-weight: 600; margin-top: 16px; }
+input:not([type=checkbox]), textarea, select { display: block; box-sizing: border-box; width: 100%; border: 1px solid #8793a8; padding: 11px; border-radius: 6px; font: inherit; margin: 6px 0 12px; }
+button { padding: 10px 15px; border: 0; border-radius: 6px; background: #1755b5; color: white; cursor: pointer; font: inherit; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+.secondary { background: light-dark(#e5eaf3, #4b5563); color: inherit; }
+.checkbox { font-weight: 400; }
+.checkbox input { margin-right: 8px; }
+.note, footer { font-size: .9rem; }
+#identity { overflow-wrap: anywhere; }
+article { border-top: 1px solid #8793a8; padding: 10px 0; }
+audio { display: block; width: 100%; margin-bottom: 10px; }
+:focus-visible { outline: 3px solid #d58b00; outline-offset: 3px; }

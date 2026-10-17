@@ -1,0 +1,20 @@
+{
+  "contract": {
+    "acquisition_model": "last_tagged_before_signup_7d",
+    "captured_at_key": "utm_captured_at",
+    "max_tag_length": 96,
+    "tag_pattern": "^[a-z0-9][a-z0-9_.-]{0,95}$",
+    "utm_keys": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "version": 2,
+    "window_seconds": 604800
+  },
+  "producer": "AceDataCloud/PlatformBackend",
+  "profile": "acquisition",
+  "sha256": "0ac0d785ff8621857f26a52780868386fc7fef80e99dcbc48e58f928725a1d5a",
+  "source_sha": "5a1a5183d246c99a82e94bfde72c8b01b86c2005"
+}
