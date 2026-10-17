@@ -98,6 +98,17 @@ test("ambiguous submission locks generation until explicit history review", asyn
   session.resetAfterHistoryReview(true); assert.equal(session.state, "idle");
 });
 
+test("malformed 2xx submission also locks another paid request", async () => {
+  for (const body of [["unexpected"], "unexpected", {}, { task_id: "bad/id" }]) {
+    let calls = 0;
+    const session = new TaskSession(createClient(async () => { calls++; return response(body); }));
+    await assert.rejects(session.generate(token, input, true), (e) => e.unknownOutcome);
+    assert.equal(session.state, "unknown");
+    await assert.rejects(session.generate(token, input, true), /do not regenerate/);
+    assert.equal(calls, 1);
+  }
+});
+
 test("secrets and untrusted media are never echoed into renderable results", async () => {
   assert.equal(safeMediaUrl("javascript:alert(1)"), null);
   assert.equal(safeMediaUrl("https://user:pass@cdn.example/audio.mp3"), null);

@@ -122,7 +122,10 @@ export function createClient(fetchImpl = globalThis.fetch) {
   return {
     async generate(token, input) {
       const body = await request("/suno/audios", token, generationPayload(input), true);
-      const result = normalizeResult(body);
+      let result;
+      try { result = normalizeResult(body); } catch {
+        throw new ServiceError("Unexpected accepted response. Check Ace request history before generating again.", null, true);
+      }
       if (!result.taskId) {
         throw new ServiceError("No task ID was returned. Check Ace request history before generating again.", null, true);
       }

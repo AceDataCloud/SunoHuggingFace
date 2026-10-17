@@ -3,7 +3,7 @@
   "node": "v23.11.0",
   "tests": {
     "command": "npm test",
-    "passed": 10,
+    "passed": 11,
     "failed": 0,
     "mode": "mocked transport; no browser or API inference"
   },
@@ -15,7 +15,7 @@
   ],
   "artifact": {
     "path": "artifacts/suno-static-space.zip",
-    "sha256": "72b2db1248e08cc9a29f023d0bb8a7fda0533ebc90902c5437821c5ae21f38ca",
+    "sha256": "bf2f2a78fcd12514947a76df114b017d9f24955bf8e4411672607548b7bdc874",
     "files": [
       "README.md",
       "index.html",
