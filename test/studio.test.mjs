@@ -134,6 +134,26 @@ test("nested video result and image results normalize only after terminal proof"
   assert.throws(() => normalizeMedia({ id: "other" }, "seedance", "task1", true), /mismatch/);
 });
 
+test("all four media profiles preserve terminal failure when finished_at is null", () => {
+  for (const slug of Object.keys(PROFILES)) {
+    for (const state of ["failed", "cancelled", "canceled", "rejected", "error"]) {
+      for (const position of ["wrapper", "body", "item"]) {
+        const raw = { id: "task1", finished_at: null, response: { success: true, data: [{
+          state: "succeeded", video_url: "https://example.org/not-final.mp4", image_url: "https://example.org/not-final.png",
+        }] } };
+        if (position === "wrapper") raw.state = state;
+        if (position === "body") raw.response.status = state;
+        if (position === "item") raw.response.data[0].state = state;
+        const result = normalizeMedia(raw, slug, "task1", true);
+        assert.equal(result.status, "failed", `${slug}:${position}:${state}`);
+        assert.deepEqual(result.media, []);
+      }
+    }
+    assert.equal(normalizeMedia({ id: "task1", finished_at: null,
+      response: { success: false } }, slug, "task1", true).status, "failed");
+  }
+});
+
 test("OpenAI image created/data shape requires finished wrapper and safe image Base64", () => {
   const image = { created: 1, data: [{ url: "https://example.org/final.png" }] };
   assert.equal(normalizeMedia(image, "gpt-image").status, "succeeded");

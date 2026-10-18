@@ -72,8 +72,9 @@ export function normalizeResult(raw, requestedTaskId = "", retrieved = false) {
   const itemStates = data.map((x) => x?.state).filter((x) => typeof x === "string")
     .map((x) => x.toLowerCase());
   const unfinished = retrieved && Object.hasOwn(raw, "finished_at") && raw.finished_at === null;
-  const failed = !unfinished && (body.success === false || body.error || states.some((s) => FAILED.has(s))
-    || itemStates.some((s) => FAILED.has(s)));
+  // A lagging/empty timestamp must not override an explicit terminal failure.
+  const failed = body.success === false || Boolean(body.error) || states.some((s) => FAILED.has(s))
+    || itemStates.some((s) => FAILED.has(s));
   const explicitSuccess = body.success === true || states.some((s) => COMPLETE.has(s));
   const stillRunning = [...states, ...itemStates].some((s) => !COMPLETE.has(s) && !FAILED.has(s));
   const complete = !unfinished && !failed && explicitSuccess && !stillRunning;

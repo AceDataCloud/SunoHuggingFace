@@ -57,6 +57,38 @@ test("terminal failure wins over success and terminal success requires valid med
   assert.throws(() => normalizeResult({ id: "other" }, "task-one", true), /mismatch/);
 });
 
+test("terminal Suno cancellation/failure wins over a null completion timestamp", () => {
+  for (const state of ["failed", "cancelled", "canceled", "rejected", "error"]) {
+    for (const position of ["wrapper", "body", "track"]) {
+      const raw = { id: "task-one", finished_at: null, response: { success: true,
+        data: [{ state: "succeeded", audio_url: "https://cdn.example/not-final.mp3" }] } };
+      if (position === "wrapper") raw.state = state;
+      if (position === "body") raw.response.status = state;
+      if (position === "track") raw.response.data[0].state = state;
+      const result = normalizeResult(raw, "task-one", true);
+      assert.equal(result.status, "failed", `${position}:${state}`);
+      assert.deepEqual(result.tracks, []);
+    }
+  }
+  for (const response of [{ success: false }, { error: { code: "rejected" } }]) {
+    assert.equal(normalizeResult({ id: "task-one", finished_at: null, response }, "task-one", true).status, "failed");
+  }
+});
+
+test("retrieving a cancelled task never retries or reopens generation", async () => {
+  let calls = 0;
+  const session = new TaskSession(createClient(async (url) => {
+    calls++;
+    assert.equal(url, "https://api.acedata.cloud/suno/tasks");
+    return response({ id: "task-one", finished_at: null, state: "cancelled",
+      response: { success: true, data: [{ audio_url: "https://cdn.example/preview.mp3" }] } });
+  }));
+  const result = await session.retrieve(token, "task-one");
+  assert.equal(result.status, "failed"); assert.deepEqual(result.tracks, []);
+  await assert.rejects(session.generate(token, input, true), /do not regenerate/);
+  assert.equal(calls, 1);
+});
+
 test("429, 403, 500 and network errors are not retried or replaced", async () => {
   for (const status of [429, 403, 500]) {
     let calls = 0;

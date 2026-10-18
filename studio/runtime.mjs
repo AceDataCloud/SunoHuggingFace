@@ -41,7 +41,8 @@ export function normalizeMedia(raw, slug, requestedId = "", retrieved = false) {
   for (const name of ["state", "status"]) if (typeof raw[name] === "string") states.push(raw[name].toLowerCase());
   visit(body);
   const unfinished = retrieved && Object.hasOwn(raw, "finished_at") && raw.finished_at === null;
-  const hasFailed = !unfinished && (failed || states.some((s) => FAILED.has(s)));
+  // Cancellation/rejection is terminal even if finished_at has not caught up.
+  const hasFailed = failed || states.some((s) => FAILED.has(s));
   const pending = states.some((s) => !DONE.has(s) && !FAILED.has(s));
   // OpenAI image response uses created/data rather than success; task wrapper must be terminal.
   const imageShape = slug === "gpt-image" && typeof body.created === "number" && Array.isArray(body.data);
