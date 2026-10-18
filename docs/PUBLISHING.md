@@ -1,7 +1,11 @@
 # HF Static Space publication gate
 
-This repository is canonical. HF is the distribution mirror. No Space was created,
-uploaded, deployed, indexed or tested live by this source PR.
+This repository is canonical. HF is the distribution mirror. Product PR #1 is
+merged and v0.2.0 artifacts are released on GitHub. No HF Space was created,
+uploaded, deployed, indexed or tested live. The user authorized necessary free
+publishing on 2026-10-19; the current gate is the existing authorized company
+HF identity/Space-write credential and verified namespace, not merge approval.
+See [exact account continuation](ACCOUNT_AND_RELEASE.md).
 
 Official sources, read 2026-10-18:
 

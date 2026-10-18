@@ -2,7 +2,7 @@
 
 在 Space 里输入提示词生成音乐，保存任务 ID，再查询同一个任务并播放终态音频。集成由 **Ace Data Cloud 独立提供**，不冒充 Suno 官方产品，也不表示获得 Suno 或 Hugging Face 背书。
 
-**当前状态：源码候选待审，尚无已验证的公开 HF Space。** 尚未真实发起付费生成、验证搜索安装或证明 Ace 进入官方服务商列表。[英文说明](../README.md) · [当前价格](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=sunohuggingface_zh_pricing)。
+**2026-10-19状态：产品PR已合并，[v0.2.0五项独立包已正式发布](https://github.com/AceDataCloud/SunoHuggingFace/releases/tag/v0.2.0)，含取消/失败终态优先级修复；尚无已验证的公开HF Space。** 未真实发起付费生成、验证搜索安装或证明Ace进入官方服务商列表。当前缺现有公司HF身份/Space写权限的可用授权，不能据此认定公司无账号；[精确续发步骤](../docs/ACCOUNT_AND_RELEASE.md)。[英文说明](../README.md) · [当前价格](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=sunohuggingface_zh_pricing)。
 
 ## 1. 找到正确入口
 
