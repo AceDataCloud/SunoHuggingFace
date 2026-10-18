@@ -1,0 +1,64 @@
+{
+  "as_of": "2026-10-18 Asia/Shanghai",
+  "source_version": "0.2.0 candidate",
+  "tests": {
+    "command": "npm test",
+    "passed": 25,
+    "failed": 0,
+    "network_generation": 0,
+    "authenticated_task_queries": 0
+  },
+  "checks": [
+    "npm run check",
+    "python3 scripts/build_spaces.py",
+    "python3 scripts/check_space_packages.py",
+    "root Suno archive relative Markdown links",
+    "git diff --check"
+  ],
+  "artifacts": [
+    {
+      "service": "Seedance",
+      "slug": "seedance",
+      "directory": "/Users/germey/Projects/AceDataCloud/.worktrees/SunoHuggingFace-native/artifacts/spaces/seedance",
+      "archive": "/Users/germey/Projects/AceDataCloud/.worktrees/SunoHuggingFace-native/artifacts/seedance-static-space.zip",
+      "files": 19,
+      "sha256": "992fe18e318e01cbedb096cd72d7a94b19fb4f47f82599dcfe1d4c910aa06e85",
+      "publication": "not uploaded or deployed"
+    },
+    {
+      "service": "HappyHorse",
+      "slug": "happyhorse",
+      "directory": "/Users/germey/Projects/AceDataCloud/.worktrees/SunoHuggingFace-native/artifacts/spaces/happyhorse",
+      "archive": "/Users/germey/Projects/AceDataCloud/.worktrees/SunoHuggingFace-native/artifacts/happyhorse-static-space.zip",
+      "files": 19,
+      "sha256": "8819fa1da139d9542727acdd3e4564d29a4097d2ae315dbe182a2ec68d8d714c",
+      "publication": "not uploaded or deployed"
+    },
+    {
+      "service": "GPT Image",
+      "slug": "gpt-image",
+      "directory": "/Users/germey/Projects/AceDataCloud/.worktrees/SunoHuggingFace-native/artifacts/spaces/gpt-image",
+      "archive": "/Users/germey/Projects/AceDataCloud/.worktrees/SunoHuggingFace-native/artifacts/gpt-image-static-space.zip",
+      "files": 19,
+      "sha256": "119319a7717e7e57865e98db6b787c72a04c4298b8e08fa11511f5a60c3809c1",
+      "publication": "not uploaded or deployed"
+    },
+    {
+      "service": "Nano Banana",
+      "slug": "nano-banana",
+      "directory": "/Users/germey/Projects/AceDataCloud/.worktrees/SunoHuggingFace-native/artifacts/spaces/nano-banana",
+      "archive": "/Users/germey/Projects/AceDataCloud/.worktrees/SunoHuggingFace-native/artifacts/nano-banana-static-space.zip",
+      "files": 19,
+      "sha256": "ef7db5bf4f7a64c7e32f4c6f9b55e33b3233d4b9803d1878cc256b932458657d",
+      "publication": "not uploaded or deployed"
+    }
+  ],
+  "suno_archive": {
+    "files": 32,
+    "relative_markdown_links": 90,
+    "sha256": "4f7dada273bd9531ebf2264f44e72e35eabb4904ba9243dbaed73f26fbaa5087"
+  },
+  "ui": "No browser/GUI started; candidate controls await coordinator queue; no fabricated UI or media output",
+  "release": "No HF upload/deploy, agreement, new payment, or account/permission change",
+  "limitation": "Offline tests and four independent zip artifacts do not establish official listing/search/install/runtime/media/invoice/acquisition."
+}

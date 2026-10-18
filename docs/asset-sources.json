@@ -1,0 +1,23 @@
+[
+  {
+    "file": "assets/get-api-key-en.png",
+    "url": "https://github.com/AceDataCloud/SunoDify/blob/8d3d03570e73324220f111f7fe343da0792a8071/_assets/tutorial/get-api-key-en.png",
+    "git_blob_sha": "0cbf4175a554114181e4ea1865b821fc501561d6",
+    "date": "2026-10-18 fetched; original screenshot capture date not separately recorded",
+    "scope": "Ace Console only; not a Hugging Face success screenshot"
+  },
+  {
+    "file": "assets/create-api-key-en.png",
+    "url": "https://github.com/AceDataCloud/SunoDify/blob/8d3d03570e73324220f111f7fe343da0792a8071/_assets/tutorial/create-api-key-en.png",
+    "git_blob_sha": "cf1504e51193063195f45c47f13ceabd1db39205",
+    "date": "2026-10-18 fetched; original screenshot capture date not separately recorded",
+    "scope": "Ace Console only; not a Hugging Face success screenshot"
+  },
+  {
+    "file": "docs/attribution-contract.json",
+    "url": "https://github.com/AceDataCloud/AuthBackend/blob/main/contracts/marketing-attribution.json",
+    "git_blob_sha": "0cde5d7386b2c3d32f3d7ad70b230dc1ea9b37a0",
+    "date": "2026-10-18 current AuthBackend contract readback",
+    "scope": "Unmodified existing asset/contract"
+  }
+]

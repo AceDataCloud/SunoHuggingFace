@@ -1,0 +1,1340 @@
+{
+  "as_of": "2026-10-18 Asia/Shanghai",
+  "sources": [
+    {
+      "repo": "AceDataCloud/PlatformBackend",
+      "path": "cost/service_api_mapping.json",
+      "sha": "0d1339962cbe8582a987b8404ebcd14ef3e4e071",
+      "url": "https://github.com/AceDataCloud/PlatformBackend/blob/main/cost/service_api_mapping.json",
+      "local": "/tmp/ace-hf-top5-contracts-20261018/PlatformBackend-cost_service_api_mapping.json",
+      "services": [
+        {
+          "id": "06f2acb7-e4d4-43de-9909-76e27b4e2355",
+          "alias": "openai",
+          "display_name": "OpenAI generation",
+          "title": "$t(service_title_openai)",
+          "type": "Api",
+          "unit": "Credit",
+          "tags": [
+            "aichat",
+            "aiimage"
+          ],
+          "category": "AI Chat",
+          "category_icon": "comments",
+          "rank": -9200,
+          "private": false,
+          "need_verify": false,
+          "apis": [
+            {
+              "id": "c9969b66-effb-4753-b504-a82c4d16f83f",
+              "name": "OpenAI Chat Completion API",
+              "title": "OpenAI Chat Completion API",
+              "path": "/openai/chat/completions",
+              "path2": "/v1/chat/completions",
+              "method": "POST",
+              "stage": "Production"
+            },
+            {
+              "id": "a0840c8a-2b9a-4407-8aaf-0057f0e1f65c",
+              "name": "OpenAI Embeddings API",
+              "title": "OpenAI Embeddings API",
+              "path": "/openai/embeddings",
+              "path2": "/v1/embeddings",
+              "method": "POST",
+              "stage": "Production"
+            },
+            {
+              "id": "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+              "name": "OpenAI Images Generations API",
+              "title": "OpenAI Images Generations API",
+              "path": "/openai/images/generations",
+              "path2": "/v1/images/generations",
+              "method": "POST",
+              "stage": "Production"
+            },
+            {
+              "id": "df57157e-2a4f-43f6-870b-fd3c530827e6",
+              "name": "OpenAI Models API",
+              "title": "OpenAI Models API",
+              "path": "/openai/models",
+              "path2": "/v1/models",
+              "method": "GET",
+              "stage": "Production"
+            },
+            {
+              "id": "ed972a38-ecef-4fcb-af33-750de42d25dc",
+              "name": "OpenAI Responses API",
+              "title": "OpenAI Responses API",
+              "path": "/openai/responses",
+              "path2": "/v1/responses",
+              "method": "POST",
+              "stage": "Production"
+            },
+            {
+              "id": "fb74083e-bb68-48d5-8ba6-b5a224400cd3",
+              "name": "OpenAI Images Edits API",
+              "title": "OpenAI Images Edits API",
+              "path": "/openai/images/edits",
+              "path2": "/v1/images/edits",
+              "method": "POST",
+              "stage": "Beta"
+            },
+            {
+              "id": "078d0146-f820-4617-b98e-47ba15a93d60",
+              "name": "OpenAI Audio Speech API",
+              "title": "OpenAI Audio Speech API",
+              "path": "/v1/audio/speech",
+              "path2": "/openai/audio/speech",
+              "stage": "Beta",
+              "tags": [
+                "openai",
+                "audio",
+                "speech",
+                "tts",
+                "aiaudio"
+              ]
+            },
+            {
+              "id": "60f037ff-7d2f-4ea4-ae42-feba542c8cb2",
+              "name": "OpenAI Audio Transcriptions API",
+              "title": "OpenAI Audio Transcriptions API",
+              "path": "/v1/audio/transcriptions",
+              "path2": "/openai/audio/transcriptions",
+              "stage": "Beta",
+              "tags": [
+                "openai",
+                "audio",
+                "transcriptions",
+                "speech-to-text"
+              ]
+            },
+            {
+              "id": "a5292a2e-d6a7-4215-a56c-e470ee2028db",
+              "name": "OpenAI Realtime API",
+              "title": "OpenAI Realtime API",
+              "path": "/v1/realtime",
+              "path2": "/openai/realtime",
+              "stage": "Alpha",
+              "tags": [
+                "openai",
+                "realtime",
+                "voice",
+                "audio"
+              ]
+            },
+            {
+              "id": "8ff29e12-b814-4484-ab50-d39773a7a563",
+              "name": "OpenAI Tasks API",
+              "title": "OpenAI Tasks API",
+              "path": "/openai/tasks",
+              "method": "POST",
+              "stage": "Beta"
+            }
+          ]
+        },
+        {
+          "id": "762c5fd0-a81e-4c59-b9fe-16bcffad7d4a",
+          "alias": "seedance",
+          "display_name": "ByteDance Seedance Video Generation",
+          "title": "$t(service_title_seedance)",
+          "type": "Api",
+          "unit": "Credit",
+          "tags": [
+            "aivideo"
+          ],
+          "category": "AI Video",
+          "category_icon": "video",
+          "rank": -9005,
+          "private": false,
+          "need_verify": false,
+          "apis": [
+            {
+              "id": "0083b874-4da6-40df-87e3-835b1300c1e8",
+              "name": "ByteDance Seedance Videos API",
+              "title": "ByteDance Seedance Videos API",
+              "path": "/seedance/videos",
+              "method": "POST",
+              "stage": "Beta"
+            },
+            {
+              "id": "c09d6a1b-3cca-4f7c-add3-8c14be60da3c",
+              "name": "ByteDance Seedance Tasks API",
+              "title": "ByteDance Seedance Tasks API",
+              "path": "/seedance/tasks",
+              "method": "POST",
+              "stage": "Production"
+            }
+          ]
+        },
+        {
+          "id": "44fa6ed2-1ad1-4c7e-a8bd-30002728c0d1",
+          "alias": "nano-banana",
+          "display_name": "Nano Banana Image Generation",
+          "title": "$t(service_title_nanobanana)",
+          "type": "Api",
+          "unit": "Credit",
+          "tags": [
+            "aiimage"
+          ],
+          "category": "AI Image",
+          "category_icon": "image",
+          "rank": -6000,
+          "private": false,
+          "need_verify": false,
+          "apis": [
+            {
+              "id": "9d8a117e-31ca-4322-a0fd-1771296ec610",
+              "name": "Nano Banana Generation API",
+              "title": "Nano Banana Images API",
+              "path": "/nano-banana/images",
+              "path2": "/gemini/images",
+              "method": "POST",
+              "stage": "Beta"
+            },
+            {
+              "id": "72e9188b-99df-4e3a-85e4-8e3dbf389790",
+              "name": "Nano Banana Tasks API",
+              "title": "Nano Banana Tasks API",
+              "path": "/nano-banana/tasks",
+              "method": "POST",
+              "stage": "Production"
+            }
+          ]
+        },
+        {
+          "id": "9cd79226-f638-4979-9573-212328a65a31",
+          "alias": "happyhorse",
+          "display_name": "HappyHorse Video",
+          "title": "$t(service_title_happyhorse)",
+          "type": "Api",
+          "unit": "Credit",
+          "tags": [
+            "aivideo"
+          ],
+          "category": "AI Video",
+          "category_icon": "video",
+          "rank": 0,
+          "private": false,
+          "need_verify": false,
+          "apis": [
+            {
+              "id": "d656e357-50cb-4390-b8c9-67464bc2a2f2",
+              "name": "HappyHorse Videos API",
+              "title": "HappyHorse Videos API",
+              "path": "/happyhorse/videos",
+              "method": "POST",
+              "stage": "Beta",
+              "tags": [
+                "happyhorse",
+                "video",
+                "aivideo"
+              ]
+            },
+            {
+              "id": "4fedc9b2-45d7-4e8f-8ce4-8f00ae31c78a",
+              "name": "HappyHorse Tasks API",
+              "title": "HappyHorse Tasks API",
+              "path": "/happyhorse/tasks",
+              "method": "POST",
+              "stage": "Production",
+              "tags": [
+                "happyhorse",
+                "video",
+                "tasks"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "repo": "AceDataCloud/SeedanceDify",
+      "path": "tools/api_contracts.py",
+      "sha": "79395e642dd5c591f9ac8995fb8e812c866d7a4b",
+      "url": "https://github.com/AceDataCloud/SeedanceDify/blob/main/tools/api_contracts.py",
+      "local": "/tmp/ace-hf-top5-contracts-20261018/SeedanceDify-tools_api_contracts.py",
+      "excerpt": "\"\"\"Published API contracts; source revisions are recorded in tests/parity-audit.json.\"\"\"\n\nTASK_PATH = \"/seedance/tasks\"\n\nENDPOINTS = {\n    \"seedance_generate_video\": {\n        \"method\": \"POST\",\n        \"path\": \"/seedance/videos\",\n        \"operation\": \"generate\",\n        \"schema\": {\n            \"type\": \"object\",\n            \"required\": [\"model\", \"content\"],\n            \"properties\": {\n                \"model\": {\n                    \"type\": \"string\",\n                    \"enum\": [\n                        \"doubao-seedance-1-0-pro-250528\",\n                        \"doubao-seedance-1-0-pro-fast-251015\",\n                        \"doubao-seedance-1-5-pro-251215\",\n                        \"doubao-seedance-1-0-lite-t2v-250428\",\n                        \"doubao-seedance-1-0-lite-i2v-250428\",\n                        \"doubao-seedance-2-0-260128\",\n                        \"doubao-seedance-2-0-fast-260128\",\n                        \"doubao-seedance-2-0-mini-260615\",\n                        \"doubao-seedance-2-5-260628\",\n                    ],\n                },\n                \"content\": {\n                    \"type\": \"array\",\n                    \"items\": {\n                        \"oneOf\": [\n                            {\n                                \"type\": \"object\",\n                                \"required\": [\"type\", \"text\"],\n                                \"properties\": {\n                                    \"type\": {\"type\": \"string\", \"enum\": [\"text\"]},\n                                    \"text"
+    },
+    {
+      "repo": "AceDataCloud/HappyHorseDify",
+      "path": "tools/api_contracts.py",
+      "sha": "7eb4d0661e704c8039b1bc3c2ed5015312f0e2bc",
+      "url": "https://github.com/AceDataCloud/HappyHorseDify/blob/main/tools/api_contracts.py",
+      "local": "/tmp/ace-hf-top5-contracts-20261018/HappyHorseDify-tools_api_contracts.py",
+      "excerpt": "\"\"\"Published API contracts; source revisions are recorded in tests/parity-audit.json.\"\"\"\n\nTASK_PATH = \"/happyhorse/tasks\"\n\nENDPOINTS = {\n    \"happyhorse_generate_video\": {\n        \"method\": \"POST\",\n        \"path\": \"/happyhorse/videos\",\n        \"operation\": \"generate\",\n        \"schema\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"action\": {\n                    \"enum\": [\"generate\", \"image_to_video\", \"reference_to_video\", \"video_edit\"],\n                    \"type\": \"string\",\n                },\n                \"model\": {\n                    \"enum\": [\n                        \"happyhorse-1.0-t2v\",\n                        \"happyhorse-1.1-t2v\",\n                        \"happyhorse-1.0-i2v\",\n                        \"happyhorse-1.1-i2v\",\n                        \"happyhorse-1.0-r2v\",\n                        \"happyhorse-1.1-r2v\",\n                        \"happyhorse-1.0-video-edit\",\n                    ],\n                    \"type\": \"string\",\n                },\n                \"prompt\": {\"type\": \"string\"},\n                \"image_url\": {\"type\": \"string\"},\n                \"image_urls\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}},\n                \"video_url\": {\"type\": \"string\"},\n                \"resolution\": {\"enum\": [\"720P\", \"1080P\"], \"type\": \"string\"},\n                \"ratio\": {\"enum\": [\"16:9\", \"9:16\", \"1:1\", \"4:3\", \"3:4\"], \"type\": \"string\"},\n                \"duration\": {\"type\": \"integer\", \"minimum\": 3, \"maximum\": 15},\n                \"watermark\": {\"type\":"
+    },
+    {
+      "repo": "AceDataCloud/GPTImageDify",
+      "path": "tools/api_contracts.py",
+      "sha": "18f945623ecca50dcbbd33c0443b9e48d9ed801b",
+      "url": "https://github.com/AceDataCloud/GPTImageDify/blob/main/tools/api_contracts.py",
+      "local": "/tmp/ace-hf-top5-contracts-20261018/GPTImageDify-tools_api_contracts.py",
+      "excerpt": "\"\"\"Published API contracts; source revisions are recorded in tests/parity-audit.json.\"\"\"\n\nTASK_PATH = \"/openai/tasks\"\n\nENDPOINTS = {\n    \"gpt_image_generate_image\": {\n        \"method\": \"POST\",\n        \"path\": \"/openai/images/generations\",\n        \"operation\": \"generate\",\n        \"schema\": {\n            \"type\": \"object\",\n            \"required\": [\"prompt\", \"model\"],\n            \"properties\": {\n                \"prompt\": {\"type\": \"string\"},\n                \"background\": {\"enum\": [\"transparent\", \"opaque\", \"auto\"], \"type\": \"string\"},\n                \"model\": {\n                    \"enum\": [\n                        \"dall-e-2\",\n                        \"dall-e-3\",\n                        \"gpt-image-1\",\n                        \"gpt-image-1.5\",\n                        \"gpt-image-2\",\n                        \"gpt-image-2.5-flare\",\n                        \"gpt-image-2.5-flare:official\",\n                        \"gpt-image-2.5-sunburst\",\n                        \"gpt-image-2.5-sunburst:official\",\n                        \"gpt-image-2:reverse\",\n                        \"gpt-image-2:official\",\n                        \"nano-banana\",\n                        \"nano-banana-2-lite\",\n                        \"nano-banana-2\",\n                        \"nano-banana-pro\",\n                    ],\n                    \"type\": \"string\",\n                },\n                \"moderation\": {\"enum\": [\"low\", \"auto\"], \"type\": \"string\"},\n                \"n\": {\"type\": \"integer\", \"minimum\": 1, \"maximum\": 10},\n                "
+    },
+    {
+      "repo": "AceDataCloud/NanoBananaDify",
+      "path": "tools/api_contracts.py",
+      "sha": "2a93e9241db772abe4cc7018a3bb0b1412d4c6aa",
+      "url": "https://github.com/AceDataCloud/NanoBananaDify/blob/main/tools/api_contracts.py",
+      "local": "/tmp/ace-hf-top5-contracts-20261018/NanoBananaDify-tools_api_contracts.py",
+      "excerpt": "\"\"\"Published API contracts; source revisions are recorded in tests/parity-audit.json.\"\"\"\n\nTASK_PATH = \"/nano-banana/tasks\"\n\nENDPOINTS = {\n    \"nano_banana_generate_image\": {\n        \"method\": \"POST\",\n        \"path\": \"/nano-banana/images\",\n        \"operation\": \"generate\",\n        \"schema\": {\n            \"type\": \"object\",\n            \"required\": [\"action\", \"prompt\"],\n            \"properties\": {\n                \"action\": {\"enum\": [\"generate\", \"edit\"], \"type\": \"string\"},\n                \"model\": {\n                    \"type\": \"string\",\n                    \"enum\": [\n                        \"nano-banana\",\n                        \"nano-banana-2-lite\",\n                        \"nano-banana-2\",\n                        \"nano-banana-2.1\",\n                        \"nano-banana-pro\",\n                        \"nano-banana:official\",\n                        \"nano-banana-2-lite:official\",\n                        \"nano-banana-2:official\",\n                        \"nano-banana-pro:official\",\n                    ],\n                },\n                \"prompt\": {\"type\": \"string\"},\n                \"image_urls\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}},\n                \"count\": {\"type\": \"integer\", \"minimum\": 1, \"maximum\": 4},\n                \"aspect_ratio\": {\n                    \"type\": \"string\",\n                    \"enum\": [\"1:1\", \"3:2\", \"2:3\", \"16:9\", \"9:16\", \"4:3\", \"3:4\"],\n                },\n                \"resolution\": {\"type\": \"string\", \"enum\": [\"1K\", \"2K\", \"4K\"]},\n                \"callback_"
+    }
+  ],
+  "schemas": {
+    "SeedanceDify": {
+      "seedance_generate_video": {
+        "path": "/seedance/videos",
+        "schema": {
+          "type": "object",
+          "required": [
+            "model",
+            "content"
+          ],
+          "properties": {
+            "model": {
+              "type": "string",
+              "enum": [
+                "doubao-seedance-1-0-pro-250528",
+                "doubao-seedance-1-0-pro-fast-251015",
+                "doubao-seedance-1-5-pro-251215",
+                "doubao-seedance-1-0-lite-t2v-250428",
+                "doubao-seedance-1-0-lite-i2v-250428",
+                "doubao-seedance-2-0-260128",
+                "doubao-seedance-2-0-fast-260128",
+                "doubao-seedance-2-0-mini-260615",
+                "doubao-seedance-2-5-260628"
+              ]
+            },
+            "content": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "required": [
+                      "type",
+                      "text"
+                    ],
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "text"
+                        ]
+                      },
+                      "text": {
+                        "type": "string",
+                        "maxLength": 1000
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "required": [
+                      "type",
+                      "image_url"
+                    ],
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "image_url"
+                        ]
+                      },
+                      "image_url": {
+                        "type": "object",
+                        "required": [
+                          "url"
+                        ],
+                        "properties": {
+                          "url": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "role": {
+                        "type": "string",
+                        "enum": [
+                          "first_frame",
+                          "last_frame",
+                          "reference_image"
+                        ]
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "required": [
+                      "type",
+                      "audio_url",
+                      "role"
+                    ],
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "audio_url"
+                        ]
+                      },
+                      "audio_url": {
+                        "type": "object",
+                        "required": [
+                          "url"
+                        ],
+                        "properties": {
+                          "url": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "role": {
+                        "type": "string",
+                        "enum": [
+                          "reference_audio"
+                        ]
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "required": [
+                      "type",
+                      "video_url",
+                      "role"
+                    ],
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "video_url"
+                        ]
+                      },
+                      "video_url": {
+                        "type": "object",
+                        "required": [
+                          "url"
+                        ],
+                        "properties": {
+                          "url": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "role": {
+                        "type": "string",
+                        "enum": [
+                          "reference_video"
+                        ]
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                ],
+                "discriminator": {
+                  "propertyName": "type"
+                }
+              }
+            },
+            "resolution": {
+              "type": "string",
+              "enum": [
+                "480p",
+                "720p",
+                "1080p",
+                "4k"
+              ]
+            },
+            "ratio": {
+              "type": "string",
+              "enum": [
+                "16:9",
+                "4:3",
+                "1:1",
+                "3:4",
+                "9:16",
+                "21:9",
+                "adaptive"
+              ]
+            },
+            "duration": {
+              "type": "integer",
+              "minimum": -1,
+              "maximum": 30
+            },
+            "frames": {
+              "type": "integer",
+              "minimum": 29,
+              "maximum": 289
+            },
+            "seed": {
+              "type": "integer",
+              "minimum": -1,
+              "maximum": 4294967295
+            },
+            "camerafixed": {
+              "type": "boolean"
+            },
+            "watermark": {
+              "type": "boolean"
+            },
+            "generate_audio": {
+              "type": "boolean"
+            },
+            "callback_url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "async": {
+              "type": "boolean"
+            },
+            "return_last_frame": {
+              "type": "boolean"
+            },
+            "execution_expires_after": {
+              "type": "integer",
+              "minimum": 3600,
+              "maximum": 259200
+            },
+            "omni_reference_task_type": {
+              "type": "string",
+              "enum": [
+                "auto",
+                "reference",
+                "edit",
+                "extend"
+              ]
+            },
+            "output_format": {
+              "type": "string",
+              "enum": [
+                "mp4",
+                "mov"
+              ]
+            },
+            "tools": {
+              "type": "array",
+              "maxItems": 1,
+              "items": {
+                "type": "object",
+                "required": [
+                  "type"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "web_search"
+                    ]
+                  },
+                  "limit": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 50
+                  },
+                  "max_keyword": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 50
+                  },
+                  "sources": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "toutiao",
+                        "douyin",
+                        "moji",
+                        "search_engine"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "priority": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9
+            },
+            "safety_identifier": {
+              "type": "string",
+              "maxLength": 64
+            }
+          }
+        }
+      },
+      "seedance_task_retrieve": {
+        "path": "/seedance/tasks",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "action": {
+              "enum": [
+                "retrieve",
+                "retrieve_batch"
+              ],
+              "type": "string"
+            }
+          }
+        }
+      },
+      "seedance_tasks_retrieve_batch": {
+        "path": "/seedance/tasks",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1
+            },
+            "action": {
+              "enum": [
+                "retrieve",
+                "retrieve_batch"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "ids"
+          ]
+        }
+      }
+    },
+    "HappyHorseDify": {
+      "happyhorse_generate_video": {
+        "path": "/happyhorse/videos",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "action": {
+              "enum": [
+                "generate",
+                "image_to_video",
+                "reference_to_video",
+                "video_edit"
+              ],
+              "type": "string"
+            },
+            "model": {
+              "enum": [
+                "happyhorse-1.0-t2v",
+                "happyhorse-1.1-t2v",
+                "happyhorse-1.0-i2v",
+                "happyhorse-1.1-i2v",
+                "happyhorse-1.0-r2v",
+                "happyhorse-1.1-r2v",
+                "happyhorse-1.0-video-edit"
+              ],
+              "type": "string"
+            },
+            "prompt": {
+              "type": "string"
+            },
+            "image_url": {
+              "type": "string"
+            },
+            "image_urls": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "video_url": {
+              "type": "string"
+            },
+            "resolution": {
+              "enum": [
+                "720P",
+                "1080P"
+              ],
+              "type": "string"
+            },
+            "ratio": {
+              "enum": [
+                "16:9",
+                "9:16",
+                "1:1",
+                "4:3",
+                "3:4"
+              ],
+              "type": "string"
+            },
+            "duration": {
+              "type": "integer",
+              "minimum": 3,
+              "maximum": 15
+            },
+            "watermark": {
+              "type": "boolean"
+            },
+            "audio_setting": {
+              "enum": [
+                "auto",
+                "origin"
+              ],
+              "type": "string"
+            },
+            "seed": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2147483647
+            },
+            "callback_url": {
+              "type": "string"
+            },
+            "async": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "happyhorse_task_retrieve": {
+        "path": "/happyhorse/tasks",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "action": {
+              "enum": [
+                "retrieve",
+                "retrieve_batch"
+              ],
+              "type": "string"
+            }
+          }
+        }
+      },
+      "happyhorse_tasks_retrieve_batch": {
+        "path": "/happyhorse/tasks",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1
+            },
+            "action": {
+              "enum": [
+                "retrieve",
+                "retrieve_batch"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "ids"
+          ]
+        }
+      }
+    },
+    "GPTImageDify": {
+      "gpt_image_generate_image": {
+        "path": "/openai/images/generations",
+        "schema": {
+          "type": "object",
+          "required": [
+            "prompt",
+            "model"
+          ],
+          "properties": {
+            "prompt": {
+              "type": "string"
+            },
+            "background": {
+              "enum": [
+                "transparent",
+                "opaque",
+                "auto"
+              ],
+              "type": "string"
+            },
+            "model": {
+              "enum": [
+                "dall-e-2",
+                "dall-e-3",
+                "gpt-image-1",
+                "gpt-image-1.5",
+                "gpt-image-2",
+                "gpt-image-2.5-flare",
+                "gpt-image-2.5-flare:official",
+                "gpt-image-2.5-sunburst",
+                "gpt-image-2.5-sunburst:official",
+                "gpt-image-2:reverse",
+                "gpt-image-2:official",
+                "nano-banana",
+                "nano-banana-2-lite",
+                "nano-banana-2",
+                "nano-banana-pro"
+              ],
+              "type": "string"
+            },
+            "moderation": {
+              "enum": [
+                "low",
+                "auto"
+              ],
+              "type": "string"
+            },
+            "n": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10
+            },
+            "output_compression": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "output_format": {
+              "enum": [
+                "png",
+                "jpeg",
+                "webp"
+              ],
+              "type": "string"
+            },
+            "partial_images": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 3
+            },
+            "size": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^(auto|\\d+x\\d+)$"
+            },
+            "quality": {
+              "enum": [
+                "auto",
+                "high",
+                "medium",
+                "low",
+                "hd",
+                "standard"
+              ],
+              "type": "string"
+            },
+            "response_format": {
+              "enum": [
+                "url",
+                "b64_json"
+              ],
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "style": {
+              "enum": [
+                "vivid",
+                "natural"
+              ],
+              "type": "string"
+            },
+            "callback_url": {
+              "type": "string"
+            },
+            "async": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "gpt_image_edit_image": {
+        "path": "/openai/images/edits",
+        "schema": {
+          "type": "object",
+          "required": [
+            "image",
+            "prompt"
+          ],
+          "properties": {
+            "image": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "maxItems": 16
+                }
+              ]
+            },
+            "prompt": {
+              "type": "string"
+            },
+            "model": {
+              "enum": [
+                "dall-e-2",
+                "dall-e-3",
+                "gpt-image-1",
+                "gpt-image-1.5",
+                "gpt-image-2",
+                "gpt-image-2.5-flare",
+                "gpt-image-2.5-flare:official",
+                "gpt-image-2.5-sunburst",
+                "gpt-image-2.5-sunburst:official",
+                "gpt-image-2:reverse",
+                "gpt-image-2:official",
+                "nano-banana",
+                "nano-banana-2-lite",
+                "nano-banana-2",
+                "nano-banana-pro"
+              ],
+              "type": "string"
+            },
+            "n": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10
+            },
+            "background": {
+              "enum": [
+                "transparent",
+                "opaque",
+                "auto"
+              ],
+              "type": "string"
+            },
+            "input_fidelity": {
+              "enum": [
+                "high",
+                "low"
+              ],
+              "type": "string"
+            },
+            "output_format": {
+              "enum": [
+                "png",
+                "jpeg",
+                "webp"
+              ],
+              "type": "string"
+            },
+            "output_compression": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "quality": {
+              "enum": [
+                "auto",
+                "high",
+                "medium",
+                "low",
+                "standard"
+              ],
+              "type": "string"
+            },
+            "size": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^(auto|\\d+x\\d+)$"
+            },
+            "response_format": {
+              "enum": [
+                "url",
+                "b64_json"
+              ],
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "callback_url": {
+              "type": "string"
+            },
+            "async": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "gpt_image_task_retrieve": {
+        "path": "/openai/tasks",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "retrieve",
+                "retrieve_batch"
+              ]
+            },
+            "id": {
+              "type": "string"
+            },
+            "trace_id": {
+              "type": "string"
+            },
+            "ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "trace_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "application_id": {
+              "type": "string"
+            },
+            "user_id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "images",
+                "images_generations",
+                "images_edits"
+              ]
+            },
+            "offset": {
+              "type": "integer"
+            },
+            "limit": {
+              "type": "integer"
+            },
+            "created_at_min": {
+              "type": "number"
+            },
+            "created_at_max": {
+              "type": "number"
+            },
+            "count_mode": {
+              "type": "string",
+              "enum": [
+                "none",
+                "exact"
+              ]
+            }
+          }
+        }
+      },
+      "gpt_image_tasks_retrieve_batch": {
+        "path": "/openai/tasks",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "retrieve",
+                "retrieve_batch"
+              ]
+            },
+            "id": {
+              "type": "string"
+            },
+            "trace_id": {
+              "type": "string"
+            },
+            "ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1
+            },
+            "trace_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "application_id": {
+              "type": "string"
+            },
+            "user_id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "images",
+                "images_generations",
+                "images_edits"
+              ]
+            },
+            "offset": {
+              "type": "integer"
+            },
+            "limit": {
+              "type": "integer"
+            },
+            "created_at_min": {
+              "type": "number"
+            },
+            "created_at_max": {
+              "type": "number"
+            },
+            "count_mode": {
+              "type": "string",
+              "enum": [
+                "none",
+                "exact"
+              ]
+            }
+          },
+          "required": [
+            "action"
+          ]
+        }
+      }
+    },
+    "NanoBananaDify": {
+      "nano_banana_generate_image": {
+        "path": "/nano-banana/images",
+        "schema": {
+          "type": "object",
+          "required": [
+            "action",
+            "prompt"
+          ],
+          "properties": {
+            "action": {
+              "enum": [
+                "generate",
+                "edit"
+              ],
+              "type": "string"
+            },
+            "model": {
+              "type": "string",
+              "enum": [
+                "nano-banana",
+                "nano-banana-2-lite",
+                "nano-banana-2",
+                "nano-banana-2.1",
+                "nano-banana-pro",
+                "nano-banana:official",
+                "nano-banana-2-lite:official",
+                "nano-banana-2:official",
+                "nano-banana-pro:official"
+              ]
+            },
+            "prompt": {
+              "type": "string"
+            },
+            "image_urls": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "count": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 4
+            },
+            "aspect_ratio": {
+              "type": "string",
+              "enum": [
+                "1:1",
+                "3:2",
+                "2:3",
+                "16:9",
+                "9:16",
+                "4:3",
+                "3:4"
+              ]
+            },
+            "resolution": {
+              "type": "string",
+              "enum": [
+                "1K",
+                "2K",
+                "4K"
+              ]
+            },
+            "callback_url": {
+              "type": "string"
+            },
+            "async": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "nano_banana_edit_image": {
+        "path": "/nano-banana/images",
+        "schema": {
+          "type": "object",
+          "required": [
+            "action",
+            "prompt"
+          ],
+          "properties": {
+            "action": {
+              "enum": [
+                "generate",
+                "edit"
+              ],
+              "type": "string"
+            },
+            "model": {
+              "type": "string",
+              "enum": [
+                "nano-banana",
+                "nano-banana-2-lite",
+                "nano-banana-2",
+                "nano-banana-2.1",
+                "nano-banana-pro",
+                "nano-banana:official",
+                "nano-banana-2-lite:official",
+                "nano-banana-2:official",
+                "nano-banana-pro:official"
+              ]
+            },
+            "prompt": {
+              "type": "string"
+            },
+            "image_urls": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "count": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 4
+            },
+            "aspect_ratio": {
+              "type": "string",
+              "enum": [
+                "1:1",
+                "3:2",
+                "2:3",
+                "16:9",
+                "9:16",
+                "4:3",
+                "3:4"
+              ]
+            },
+            "resolution": {
+              "type": "string",
+              "enum": [
+                "1K",
+                "2K",
+                "4K"
+              ]
+            },
+            "callback_url": {
+              "type": "string"
+            },
+            "async": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "nano_banana_task_retrieve": {
+        "path": "/nano-banana/tasks",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "action": {
+              "enum": [
+                "retrieve",
+                "retrieve_batch"
+              ],
+              "type": "string"
+            }
+          }
+        }
+      },
+      "nano_banana_tasks_retrieve_batch": {
+        "path": "/nano-banana/tasks",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1
+            },
+            "action": {
+              "enum": [
+                "retrieve",
+                "retrieve_batch"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "ids"
+          ]
+        }
+      }
+    }
+  }
+}

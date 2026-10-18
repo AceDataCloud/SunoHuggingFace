@@ -1,0 +1,515 @@
+{
+  "as_of": "2026-10-18 Asia/Shanghai",
+  "sources": [
+    {
+      "repo": "huggingface/hub-docs",
+      "path": "docs/hub/spaces-overview.md",
+      "url": "https://github.com/huggingface/hub-docs/blob/main/docs/hub/spaces-overview.md",
+      "blob_sha": "575132fb0bcf4b4ae4d615620c599fe1ee8e7972",
+      "observed_terms": {
+        "Static Spaces": true,
+        "require a paid plan": true,
+        "client-side": true,
+        "Secrets": true,
+        "public": true
+      },
+      "excerpts": [
+        "**To make a new Space**, visit the [Spaces main page](https://huggingface.co/spaces) and click on **Create new Space**. Along with choosing a name for your Space, selecting an optional license, and setting your Space's [visibility](#space-visibility) (public, protected, or private), you'll be prompted to choose the **SDK** for your Space. The Hub offers three SDK options: Gradio, Docker and static HTML. If you select \"Gradio\" as your SDK, you'll be navigated to a new repo showing the following page:",
+        "> Static Spaces are free for everyone. Gradio and Docker Spaces run on compute and require a paid plan to create: <a href=\"https://huggingface.co/pro\">PRO</a> for personal accounts, <a href=\"https://huggingface.co/enterprise\">Team or Enterprise</a> for organizations. Free personal accounts in good standing can still host up to 2 Gradio Spaces running on [ZeroGPU](./spaces-zerogpu).",
+        "You can set a Space's visibility from the **Settings** tab using the visibility dropdown. Spaces support three visibility levels: **public**, **protected**, and **private**.",
+        "**Protected** Spaces keep their source code private on the Hub — only the owner and collaborators can view or clone the repository. However, the running app is publicly accessible through its embed URL (`https://<space-subdomain>.hf.space`) or through a [custom domain](./spaces-custom-domain) when one is configured. This is especially useful for hosting websites or apps without publishing the source code.",
+        "Each Spaces environment is limited to 16GB RAM, 2 CPU cores and 50GB of (not persistent) disk space by default. The default CPU Basic hardware has no hourly cost, but creating a Space that runs on compute (Gradio or Docker) requires a paid plan, while Static Spaces are free for everyone. You can upgrade to better hardware, including a variety of GPU accelerators, for a [competitive price](https://huggingface.co/pricing#spaces). To request an upgrade, please click the _Settings_ button in your Space and select your preferred hardware environment.",
+        "* **Variables** if you need to store non-sensitive configuration values. They are publicly accessible and viewable and will be automatically added to Spaces duplicated from yours.",
+        "* **Secrets** to store access tokens, API keys, or any sensitive values or credentials. They are private and their value cannot be read from the Space's settings page once set. They won't be added to Spaces duplicated from your repository.",
+        "- For Static Spaces, both are available through client-side JavaScript in `window.huggingface.variables`",
+        "Spaces owners are warned when our `Spaces Secrets Scanner` [finds hard-coded secrets](./security-secrets).",
+        "* Secrets and variables: If the original repo has set some secrets and variables, you'll be able to set them while duplicating the repo.",
+        "Some Spaces might have environment variables that you may need to set up. In these cases, the duplicate workflow will auto-populate the public Variables from the source Space, and give you a warning about setting up the Secrets. The duplicated Space will use CPU Basic hardware by default, but you can later upgrade if needed. Duplicating follows the same rules as creating a new Space: duplicating a Gradio or Docker Space requires a paid plan for the target account or organization (with the same [ZeroGPU free tier](./spaces-zerogpu) exception for personal accounts).",
+        "* `OAUTH_CLIENT_ID`: the client ID of your OAuth app (public)"
+      ]
+    },
+    {
+      "repo": "huggingface/hub-docs",
+      "path": "docs/hub/spaces-sdks-static.md",
+      "url": "https://github.com/huggingface/hub-docs/blob/main/docs/hub/spaces-sdks-static.md",
+      "blob_sha": "2d756273da2eb1842eea843d02c97d1e60a35dbd",
+      "observed_terms": {
+        "free for everyone": true,
+        "sdk: static": true,
+        "variables": true
+      },
+      "excerpts": [
+        "Spaces also accommodate custom HTML for your app instead of using Streamlit or Gradio. Set `sdk: static` inside the `YAML` block at the top of your Spaces **README.md** file. Then you can place your HTML code within an **index.html** file.",
+        "Static Spaces are free for everyone: they are served directly without running on compute, so unlike [Gradio](./spaces-sdks-gradio) and [Docker](./spaces-sdks-docker) Spaces, creating them never requires a paid plan.",
+        "## Space variables",
+        "Custom [environment variables](./spaces-overview#managing-secrets) can be passed to your Space. OAuth information such as the client ID and scope are also available as environment variables, if you have [enabled OAuth](./spaces-oauth) for your Space.",
+        "To use these variables in JavaScript, you can use the `window.huggingface.variables` object. For example, to access the `OAUTH_CLIENT_ID` variable, you can use `window.huggingface.variables.OAUTH_CLIENT_ID`.",
+        "Here is an example of a Space using custom environment variables and oauth enabled and displaying the variables in the HTML:",
+        "* [Static Variables](https://huggingface.co/spaces/huggingfacejs/static-variables)"
+      ]
+    },
+    {
+      "repo": "huggingface/hub-docs",
+      "path": "docs/hub/spaces-config-reference.md",
+      "url": "https://github.com/huggingface/hub-docs/blob/main/docs/hub/spaces-config-reference.md",
+      "blob_sha": "512601c90eb2b8fd20c4cf0665e475d1973148b8",
+      "observed_terms": {
+        "title": true,
+        "short_description": true,
+        "tags": true,
+        "app_file": true,
+        "models": true
+      },
+      "excerpts": [
+        "**`title`** : _string_  ",
+        "Display title for the Space.  ",
+        "**`app_file`** : _string_  ",
+        "This is used in conjunction with `app_file` which points to the built index file: e.g. `app_file: dist/index.html`. ",
+        "For non-static Spaces, initial url to render. Needs to start with `/`. For static Spaces, use `app_file` instead.",
+        "**`short_description`**: _string_",
+        "**`models`** : _List[string]_  ",
+        "**`tags`** : _List[string]_  ",
+        "Specify a list of Hugging Face Hub models or other large files to be preloaded during the build time of your Space. This optimizes the startup time by having the files ready when your application starts. This is particularly useful for Spaces that rely on large models or datasets that would otherwise need to be downloaded at runtime."
+      ]
+    },
+    {
+      "repo": "huggingface/hub-docs",
+      "path": "docs/hub/spaces-mcp-servers.md",
+      "url": "https://github.com/huggingface/hub-docs/blob/main/docs/hub/spaces-mcp-servers.md",
+      "blob_sha": "28c6a0a9646ada7b4e710fdefcb6fcd4a416f100",
+      "observed_terms": {
+        "Gradio": true,
+        "MCP": true,
+        "badge": true
+      },
+      "excerpts": [
+        "# Spaces as MCP servers",
+        "You can **expose any public Space that has a visible `MCP` badge into a callable tool** that will be available in any MCP-compatible client, you can add as many Spaces as you want and without writing a single line of code.",
+        "## Setup your MCP Client",
+        "From your [Hub MCP settings](https://huggingface.co/settings/mcp), select your MCP client (VSCode, Cursor, Claude Code, etc.) then follow the setup instructions. ",
+        "> You need a valid Hugging Face token with <strong>READ</strong> permissions to use MCP tools. If you don't have one, <a href=\"https://huggingface.co/settings/tokens/new?tokenType=read\" target=\"_blank\">create a new \"Read\" access token here</a>.",
+        "## Add an existing Space to your MCP tools",
+        "1. Browse compatible [Spaces](https://huggingface.co/spaces?filter=mcp-server) to find Spaces that are usable via MCP. You can also look for the grey **MCP** badge on any Spaces card.",
+        "2. Click the badge and choose **Add to MCP tools** then confirm when asked.",
+        "3. The Space should be listed in your MCP Server settings in the Spaces Tools section.",
+        "## Use Spaces from your MCP client ",
+        "If your MCP client is configured correctly, the Spaces you added will be available instantly without changing anything (if it doesn't restart your client and it should appear). Most MCP clients will list what tools are currently loaded so you can make sure the Space is available.",
+        "## Build your own MCP-compatible Gradio Space"
+      ]
+    },
+    {
+      "repo": "huggingface/hub-docs",
+      "path": "docs/hub/spaces-github-actions.md",
+      "url": "https://github.com/huggingface/hub-docs/blob/main/docs/hub/spaces-github-actions.md",
+      "blob_sha": "5f8031852a30a2fde89a24186f37dddaa8412a8e",
+      "observed_terms": {
+        "sync": true,
+        "HF_TOKEN": true
+      },
+      "excerpts": [
+        "You can keep your Space in sync with your GitHub repository using the official [`huggingface/hub-sync`](https://github.com/marketplace/actions/sync-github-to-hugging-face-hub) GitHub Action.",
+        "`hub-sync` also works for Models and Datasets. See [GitHub Actions](./repositories-github-actions) for general usage.",
+        "1. Create a [GitHub secret](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-an-environment) called `HF_TOKEN` with a Hugging Face [access token](https://huggingface.co/settings/tokens).",
+        "2. Add a workflow file (e.g. `.github/workflows/sync-to-hub.yml`) to your repository:",
+        "  sync:",
+        "      - uses: huggingface/hub-sync@v0.3.0",
+        "          hf_token: ${{ secrets.HF_TOKEN }}",
+        "The action mirrors your files to the Hub using the `hf` CLI (`hf repos create` + `hf upload`). It is not a git-to-git sync — it uploads the file contents and automatically excludes `.github/` and `.git/` directories. Files removed from your GitHub repository will also be removed from the Hub.",
+        "If you prefer a direct git-to-git sync instead of file mirroring, you can push to your Space's git remote directly. With a git push, files larger than 10MB must be tracked with [git-xet](./xet/using-xet-storage#git-xet) (recommended) or Git LFS:",
+        "  sync-to-hub:",
+        "          HF_TOKEN: ${{ secrets.HF_TOKEN }}",
+        "        run: git push https://HF_USERNAME:$HF_TOKEN@huggingface.co/spaces/HF_USERNAME/SPACE_NAME main"
+      ]
+    },
+    {
+      "repo": "AceDataCloud/PlatformBackend",
+      "path": "openapi/09a26295-5972-4392-9318-dcd9b218f90d.json",
+      "url": "https://github.com/AceDataCloud/PlatformBackend/blob/main/openapi/09a26295-5972-4392-9318-dcd9b218f90d.json",
+      "blob_sha": "549a0e3a5cfb695a97bed481aa01dd06f077db25",
+      "observed_terms": {
+        "chirp-v6": true,
+        "async": true
+      },
+      "request_schemas": {
+        "/suno/audios": {
+          "type": "object",
+          "properties": {
+            "lyric": {
+              "rank": 60,
+              "type": "string",
+              "description": "$t(suno_audios_lyric)"
+            },
+            "model": {
+              "enum": [
+                "chirp-v6",
+                "chirp-v6-wild",
+                "chirp-v6-mini",
+                "chirp-v5-5",
+                "chirp-v5",
+                "chirp-v4-5-plus",
+                "chirp-v4-5",
+                "chirp-v4",
+                "chirp-v3-5",
+                "chirp-v3-0"
+              ],
+              "rank": 20,
+              "type": "string",
+              "example": "chirp-v6",
+              "description": "$t(suno_audios_model)"
+            },
+            "max_mode": {
+              "rank": 21,
+              "type": "boolean",
+              "default": false,
+              "description": "$t(suno_audios_max_mode)"
+            },
+            "variety": {
+              "enum": [
+                "off",
+                "normal",
+                "high",
+                "extra",
+                "max"
+              ],
+              "rank": 22,
+              "type": "string",
+              "description": "$t(suno_audios_variety)"
+            },
+            "style": {
+              "rank": 90,
+              "type": "string",
+              "description": "$t(suno_audios_style)"
+            },
+            "variation_category": {
+              "rank": 90,
+              "type": "string",
+              "description": "$t(suno_audios_variation_category)",
+              "enum": [
+                "high",
+                "normal",
+                "subtle"
+              ]
+            },
+            "title": {
+              "rank": 80,
+              "type": "string",
+              "description": "$t(suno_audios_title)"
+            },
+            "action": {
+              "enum": [
+                "generate",
+                "extend",
+                "upload_extend",
+                "upload_cover",
+                "concat",
+                "cover",
+                "artist_consistency",
+                "artist_consistency_vox",
+                "stems",
+                "all_stems",
+                "add_stem",
+                "extract_stem",
+                "sounds",
+                "adjust_speed",
+                "replace_section",
+                "underpainting",
+                "overpainting",
+                "remaster",
+                "mashup",
+                "samples",
+                "inspo"
+              ],
+              "rank": 0,
+              "type": "string",
+              "example": "generate",
+              "description": "$t(suno_audios_action)",
+              "default": "generate"
+            },
+            "custom": {
+              "rank": 70,
+              "type": "boolean",
+              "description": "$t(suno_audios_custom)",
+              "default": false
+            },
+            "prompt": {
+              "rank": 10,
+              "type": "string",
+              "example": "A song for Christmas",
+              "description": "$t(suno_audios_prompt)",
+              "additionalProperties": true
+            },
+            "lyric_prompt": {
+              "rank": 12,
+              "type": "string",
+              "description": "$t(suno_audios_lyric_prompt)"
+            },
+            "audio_id": {
+              "rank": 95,
+              "type": "string",
+              "description": "$t(suno_audios_audio_id)"
+            },
+            "stem_type": {
+              "rank": 95,
+              "type": "string",
+              "description": "$t(suno_audios_stem_type)",
+              "enum": [
+                "vocals",
+                "backing_vocals",
+                "drums",
+                "bass",
+                "guitar",
+                "keyboard",
+                "percussion",
+                "strings",
+                "synth",
+                "fx",
+                "brass",
+                "woodwinds"
+              ]
+            },
+            "audio_format": {
+              "rank": 96,
+              "type": "string",
+              "description": "$t(suno_audios_audio_format)",
+              "enum": [
+                "mp3"
+              ]
+            },
+            "sound": {
+              "rank": 95,
+              "type": "string",
+              "description": "$t(suno_audios_sound)"
+            },
+            "sound_type": {
+              "rank": 96,
+              "type": "string",
+              "enum": [
+                "one-shot",
+                "loop"
+              ],
+              "description": "$t(suno_audios_sound_type)"
+            },
+            "bpm": {
+              "rank": 96,
+              "type": "integer",
+              "description": "$t(suno_audios_bpm)",
+              "minimum": 1,
+              "maximum": 300
+            },
+            "key": {
+              "rank": 96,
+              "type": "string",
+              "description": "$t(suno_audios_key)"
+            },
+            "speed_multiplier": {
+              "rank": 96,
+              "type": "number",
+              "minimum": 0.25,
+              "maximum": 4,
+              "description": "$t(suno_audios_speed_multiplier)"
+            },
+            "keep_pitch": {
+              "rank": 96,
+              "type": "boolean",
+              "description": "$t(suno_audios_keep_pitch)",
+              "default": false
+            },
+            "mashup_audio_ids": {
+              "rank": 95,
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "$t(suno_audios_mashup_audio_ids)"
+            },
+            "audio_urls": {
+              "rank": 95,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^https?://"
+              },
+              "example": [
+                "https://cdn.acedata.cloud/uploads/a0bc051f-42c2-4a46-aeb4-582dcc884ad2"
+              ],
+              "description": "$t(suno_audios_audio_urls)",
+              "minItems": 1,
+              "maxItems": 4
+            },
+            "weirdness": {
+              "rank": 96,
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "$t(suno_audios_weirdness)"
+            },
+            "persona_id": {
+              "rank": 95,
+              "type": "string",
+              "description": "$t(suno_audios_persona_id)"
+            },
+            "overpainting_start": {
+              "rank": 96,
+              "type": "number",
+              "description": "$t(suno_audios_overpainting_start)"
+            },
+            "overpainting_end": {
+              "rank": 96,
+              "type": "number",
+              "description": "$t(suno_audios_overpainting_end)"
+            },
+            "samples_start": {
+              "rank": 96,
+              "type": "number",
+              "description": "$t(suno_audios_samples_start)"
+            },
+            "samples_end": {
+              "rank": 96,
+              "type": "number",
+              "description": "$t(suno_audios_samples_end)"
+            },
+            "underpainting_start": {
+              "rank": 96,
+              "type": "number",
+              "description": "$t(suno_audios_underpainting_start)"
+            },
+            "underpainting_end": {
+              "rank": 96,
+              "type": "number",
+              "description": "$t(suno_audios_underpainting_end)"
+            },
+            "continue_at": {
+              "rank": 96,
+              "type": "number",
+              "description": "$t(suno_audios_continue_at)"
+            },
+            "callback_url": {
+              "rank": 100,
+              "type": "string",
+              "description": "$t(suno_audios_callback_url)"
+            },
+            "async": {
+              "rank": 101,
+              "type": "boolean",
+              "description": "$t(suno_audios_async)"
+            },
+            "instrumental": {
+              "rank": 70,
+              "type": "boolean",
+              "description": "$t(suno_audios_instrumental)"
+            },
+            "vocal_gender": {
+              "rank": 92,
+              "type": "string",
+              "description": "$t(suno_audios_vocal_gender)",
+              "enum": [
+                "f",
+                "m"
+              ]
+            },
+            "negative_tags": {
+              "rank": 91,
+              "type": "string",
+              "description": "$t(suno_audios_negative_tags)"
+            },
+            "style_influence": {
+              "rank": 96,
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "$t(suno_audios_style_influence)"
+            },
+            "audio_weight": {
+              "rank": 96,
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "$t(suno_audios_audio_weight)"
+            },
+            "duration": {
+              "rank": 96,
+              "type": "integer",
+              "description": "$t(suno_audios_duration)",
+              "minimum": 10,
+              "maximum": 360
+            },
+            "replace_section_end": {
+              "rank": 96,
+              "type": "number",
+              "description": "$t(suno_audios_replace_section_end)"
+            },
+            "replace_section_result_mode": {
+              "rank": 97,
+              "type": "string",
+              "enum": [
+                "candidates",
+                "full_song"
+              ],
+              "description": "$t(suno_audios_replace_section_result_mode)",
+              "default": "full_song"
+            },
+            "replace_section_start": {
+              "rank": 96,
+              "type": "number",
+              "description": "$t(suno_audios_replace_section_start)"
+            }
+          }
+        }
+      }
+    },
+    {
+      "repo": "AceDataCloud/PlatformBackend",
+      "path": "openapi/f1143f0b-8146-4fc0-b02c-ac8db969392d.json",
+      "url": "https://github.com/AceDataCloud/PlatformBackend/blob/main/openapi/f1143f0b-8146-4fc0-b02c-ac8db969392d.json",
+      "blob_sha": "e673a2f8736caf09369627cc1f8b8132053534ce",
+      "observed_terms": {
+        "retrieve": true
+      },
+      "request_schemas": {
+        "/suno/tasks": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "$t(suno_tasks_id)"
+            },
+            "ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "$t(suno_tasks_ids)"
+            },
+            "action": {
+              "enum": [
+                "retrieve",
+                "retrieve_batch"
+              ],
+              "type": "string",
+              "default": "retrieve",
+              "description": "$t(suno_tasks_action)"
+            }
+          },
+          "example": {
+            "action": "retrieve",
+            "id": "task-id"
+          }
+        }
+      }
+    },
+    {
+      "repo": "AceDataCloud/AuthBackend",
+      "path": "contracts/marketing-attribution.json",
+      "url": "https://github.com/AceDataCloud/AuthBackend/blob/main/contracts/marketing-attribution.json",
+      "blob_sha": "0cde5d7386b2c3d32f3d7ad70b230dc1ea9b37a0",
+      "observed_terms": {
+        "utm_keys": true,
+        "version": true
+      },
+      "excerpts": [
+        "    \"utm_keys\": [",
+        "    \"version\": 2,"
+      ]
+    }
+  ]
+}

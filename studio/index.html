@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" data-service="__SERVICE_SLUG__">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https: data:; connect-src https://api.acedata.cloud; media-src https:; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>__SERVICE_NAME__ by Ace Data Cloud</title>
+  <link rel="stylesheet" href="styles.css"><script type="module" src="studio/app.mjs"></script>
+</head>
+<body><main>
+  <header><div><h1 id="title">__SERVICE_NAME__ by Ace Data Cloud</h1><p id="description"></p></div></header>
+  <p>Independent integration by Ace Data Cloud, not an official or endorsed product of the named service or Hugging Face. API generation uses your Ace balance; HF credits do not apply.</p>
+  <nav aria-label="Setup"><a id="token-link">Get an Ace API token</a><a id="price-link">Current pricing</a><a href="README_zh_Hans.md">中文图文指南</a></nav>
+  <section><h2>1. Connect your Ace account</h2><p>Register or sign in → Applications → General application (initialize if absent) → copy API Key, or Manage Keys → Create. Check service access, current prices/balance, expiry and Allowed APIs listed below.</p><p id="allowed-apis"></p>
+    <label for="token">Ace application API token</label><input type="password" id="token" autocomplete="off" spellcheck="false" placeholder="Token only, without Bearer">
+    <button type="button" id="clear-token" class="secondary">Clear token</button>
+    <p>The token stays in this tab's memory and goes only to api.acedata.cloud. No cookies, storage, analytics, external scripts or shared owner token. Never put a token into public Static Space variables/secrets.</p>
+  </section>
+  <section><h2>2. Retrieve the same existing task</h2>
+    <form id="query-form"><label for="task-id">Ace task ID (not the provider's nested result ID)</label><input id="task-id" required autocomplete="off" spellcheck="false" maxlength="200"><button type="submit" id="query">Retrieve same task</button></form>
+    <p>Queries are manual, 15 seconds apart. Pending/preview media is hidden; no generation is submitted by this button.</p>
+  </section>
+  <details><summary>Create or edit media — uses your Ace balance</summary><section>
+    <h2>Configure one request</h2><p id="scope"></p>
+    <form id="generation-form"><label for="mode">Operation</label><select id="mode"></select><label for="model">Exact model (no fallback)</label><select id="model"></select><div id="fields"></div>
+      <label class="checkbox"><input id="acknowledge" type="checkbox" required> I checked current prices, account access, permissions for all inputs and balance, and authorize this single potentially billable generation/edit.</label>
+      <button id="generate" type="submit">Submit once — uses Ace balance</button>
+    </form>
+    <p>No retry or model replacement. A pending or uncertain submission blocks another generation. Inspect history before starting again, including after a page reload.</p>
+    <button type="button" id="new-task" class="secondary">I reviewed history — prepare another task</button>
+  </section></details>
+  <section><h2>3. Terminal result</h2><p role="status" aria-live="polite" id="status">No request has been sent.</p><p id="identity"></p><div id="media"></div>
+    <p>Final media is only shown for explicit terminal success. Use the task/trace ID in Ace request history to inspect the actual charge; a green status is not invoice proof.</p>
+  </section><footer><a href="https://github.com/AceDataCloud/SunoHuggingFace">Canonical source</a> · <a href="PRIVACY.md">Privacy</a> · <a href="https://github.com/AceDataCloud/SunoHuggingFace/issues">Support</a></footer>
+</main></body></html>

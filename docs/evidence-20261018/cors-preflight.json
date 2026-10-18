@@ -1,0 +1,19 @@
+{
+  "as_of": "2026-10-18 Asia/Shanghai",
+  "requests": {
+    "https://api.acedata.cloud/suno/tasks": {
+      "command_type": "unauthenticated CORS OPTIONS only",
+      "exit_code": 0,
+      "response_headers": "HTTP/2 200 \ndate: Sat, 17 Oct 2026 18:42:07 GMT\ncontent-length: 0\nvary: Origin\naccess-control-allow-origin: *\naccess-control-allow-headers: *\naccess-control-allow-methods: GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS,TRACE,CONNECT\nx-kong-response-latency: 1\nserver: kong/2.5.1\n\n",
+      "error": ""
+    },
+    "https://api.acedata.cloud/suno/audios": {
+      "command_type": "unauthenticated CORS OPTIONS only",
+      "exit_code": 0,
+      "response_headers": "HTTP/2 200 \ndate: Sat, 17 Oct 2026 18:42:07 GMT\ncontent-length: 0\nvary: Origin\naccess-control-allow-origin: *\naccess-control-allow-headers: *\naccess-control-allow-methods: GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS,TRACE,CONNECT\nx-kong-response-latency: 0\nserver: kong/2.5.1\n\n",
+      "error": ""
+    }
+  },
+  "generation_calls": 0,
+  "authenticated_task_queries": 0
+}

@@ -1,0 +1,51 @@
+{
+  "as_of": "2026-10-18 Asia/Shanghai",
+  "sources": [
+    {
+      "url": "https://github.com/huggingface/hub-docs/blob/main/docs/hub/moderation.md",
+      "blob_sha": "71db75c7c26b46fe2e48a622702c091ecdfc5109",
+      "excerpts": [
+        "> Check out the [Code of Conduct](https://huggingface.co/code-of-conduct) and the [Content Guidelines](https://huggingface.co/content-guidelines)."
+      ]
+    },
+    {
+      "url": "https://github.com/huggingface/blog/blob/main/content-guidelines-update.md",
+      "blob_sha": "17245247962fc580f8fff7fe5f041d8b26f61d19",
+      "excerpts": [
+        "title: \"Announcing our new Content Guidelines and Policy\"",
+        "thumbnail: /blog/assets/content-guidelines-blogpost/thumbnail.png",
+        "# Announcing our new Community Policy",
+        "As a community-driven platform that aims to advance Open, Collaborative, and Responsible Machine Learning, we are thrilled to support and maintain a welcoming space for our entire community! In support of this goal, we've updated our [Content Policy](https://huggingface.co/content-guidelines).",
+        "We encourage you to familiarize yourself with the complete document to fully understand what it entails. Meanwhile, this blog post serves to provide an overview, outline the rationale, and highlight the values driving the update of our Content Policy. By delving into both resources, you'll gain a comprehensive understanding of the expectations and goals for content on our platform.",
+        "Moderating Machine Learning artifacts introduces new challenges. Even more than static content, the risks associated with developing and deploying artificial intelligence systems and/or models require in-depth analysis and a wide-ranging approach to foresee possible harms. That is why the efforts to draft this new Content Policy come from different members and expertise in our cross-company teams, all of which are indispensable to have both a general and a detailed picture to provide clarity on how we enable responsible development and deployment on our platform.",
+        "## Consent as a Core Value",
+        "In this evolving legal landscape, it becomes increasingly important to emphasize the intrinsic value of \"consent\" to avoid enabling harm. By doing so, we focus on the individual's agency and subjective experiences. This approach not only supports forethought and a more empathetic understanding of consent but also encourages proactive measures to address cultural and contextual factors. In particular, our Content Policy aims to address consent related to what users see, and to how people's identities and expressions are represented.",
+        "This consideration for people's consent and experiences on the platform extends to Community Content and people's behaviors on the Hub. To maintain a safe and welcoming environment, we do not allow aggressive or harassing language directed at our users and/or the Hugging Face staff. We focus on fostering collaborative resolutions for any potential conflicts between users and repository authors, intervening only when necessary. To promote transparency, we encourage open discussions to occur within our Community tab."
+      ]
+    },
+    {
+      "url": "https://github.com/huggingface/hub-docs/blob/main/docs/hub/spaces-sdks-static.md",
+      "blob_sha": "2d756273da2eb1842eea843d02c97d1e60a35dbd",
+      "excerpts": [
+        "Static Spaces are free for everyone: they are served directly without running on compute, so unlike [Gradio](./spaces-sdks-gradio) and [Docker](./spaces-sdks-docker) Spaces, creating them never requires a paid plan."
+      ]
+    },
+    {
+      "url": "https://github.com/huggingface/hub-docs/blob/main/docs/hub/spaces-config-reference.md",
+      "blob_sha": "512601c90eb2b8fd20c4cf0665e475d1973148b8",
+      "excerpts": [
+        "**`title`** : _string_  ",
+        "Display title for the Space.  ",
+        "**`tags`** : _List[string]_  ",
+        "For now, only the [cross-origin-embedder-policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) (COEP), [cross-origin-opener-policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) (COOP), and [cross-origin-resource-policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy) (CORP) headers are allowed. These headers can be used to set up a cross-origin isolated environment and enable powerful features like `SharedArrayBuffer`, for example:",
+        "  cross-origin-embedder-policy: require-corp",
+        "  cross-origin-opener-policy: same-origin",
+        "  cross-origin-resource-policy: cross-origin"
+      ]
+    }
+  ],
+  "policy_page": "https://huggingface.co/content-guidelines",
+  "policy_direct_read": "connect timeout; full current anti-spam/brand wording not verified",
+  "decision": "No reviewed official source establishes a ban on distinct useful service Spaces. Do not claim approval or absence of restrictions. Implement independent candidates with service-specific workflows and truthful by Ace identity; exact policy and existing publisher identity remain release gates. No duplicate variant/publication or misleading third-party official marks.",
+  "brand_usage": "Text service names only, no third-party logo/official claim, relevant tags only; source candidate is not approved marketplace status."
+}

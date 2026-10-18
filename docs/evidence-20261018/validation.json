@@ -1,0 +1,50 @@
+{
+  "as_of": "2026-10-18 Asia/Shanghai",
+  "node": "v23.11.0",
+  "tests": {
+    "command": "npm test",
+    "passed": 11,
+    "failed": 0,
+    "mode": "mocked transport; no browser or API inference"
+  },
+  "checks": [
+    "node --check client.mjs",
+    "node --check app.mjs",
+    "python3 scripts/check_manifest.py",
+    "git diff --check"
+  ],
+  "artifact": {
+    "path": "artifacts/suno-static-space.zip",
+    "sha256": "ecd8579af0ef16c5d27efd43da34090ef97c7b7f34d29effdcd74c99a0ade6a4",
+    "files": [
+      "README.md",
+      "AGENTS.md",
+      "index.html",
+      "client.mjs",
+      "app.mjs",
+      "styles.css",
+      "LICENSE",
+      "PRIVACY.md",
+      "readme/README_zh_Hans.md",
+      "assets/get-api-key-en.png",
+      "assets/create-api-key-en.png",
+      "docs/asset-sources.json",
+      "docs/attribution-contract.json",
+      "docs/PUBLISHING.md",
+      "docs/VALIDATION.md",
+      "docs/API_CONTRACT.md"
+    ]
+  },
+  "generation_calls": 0,
+  "authenticated_task_queries": 0,
+  "publication": "not uploaded or deployed; no Space URL verified",
+  "ui_acceptance": "queued for coordinator; no fabricated screenshot",
+  "packaging_followup": {
+    "date": "2026-10-18",
+    "fix": "Include AGENTS.md linked by packaged README and current attribution contract.",
+    "relative_markdown_targets_checked": 17,
+    "all_targets_in_archive": true,
+    "runtime_changed": false,
+    "test_policy": "Existing 11 runtime tests were not repeated solely for reporting; package-only follow-up validated zip links/content."
+  }
+}
