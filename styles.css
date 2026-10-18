@@ -21,4 +21,5 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 #identity { overflow-wrap: anywhere; }
 article { border-top: 1px solid #8793a8; padding: 10px 0; }
 audio { display: block; width: 100%; margin-bottom: 10px; }
+article video, article img { display: block; max-width: 100%; max-height: 700px; margin-bottom: 12px; }
 :focus-visible { outline: 3px solid #d58b00; outline-offset: 3px; }

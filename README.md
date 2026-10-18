@@ -90,6 +90,24 @@ Use the task/trace ID to reconcile the actual charge in Ace history. No paid-gen
 
 No runtime dependencies or server. Run `npm test` and `npm run check`. Build a release archive with `python3 scripts/package_space.py`; this packages a Static Space and **does not upload or deploy** it. [Contribution rules](AGENTS.md), [API/source contract](docs/API_CONTRACT.md), [release checklist](docs/PUBLISHING.md).
 
-Current scope is one focused Suno Space, not a copy of the MCP server or an all-services catalog. Existing Suno APIs and the task contract are reused; related MCP code is not forked. Other media services need their own useful workflows and current endpoint evidence before implementation.
+## Additional independent service Space candidates
+
+The same canonical source now builds four **separate service apps**, each with its own
+HF metadata, native parameters, bilingual onboarding and terminal video/image UI.
+This root entry remains the focused Suno app, not an all-services selector.
+
+| Independent entry | Native workflow | Source metadata/guide |
+|---|---|---|
+| Seedance by Ace Data Cloud | text, strict frames or multimodal references → final video | [Seedance](spaces/seedance/README.md) |
+| HappyHorse by Ace Data Cloud | text/image/reference/video-edit actions with matched models → video | [HappyHorse](spaces/happyhorse/README.md) |
+| GPT Image by Ace Data Cloud | separate generation/JSON-URL edit → image gallery | [GPT Image](spaces/gpt-image/README.md) |
+| Nano Banana by Ace Data Cloud | generate/edit, own references/count/ratio/resolution → gallery | [Nano Banana](spaces/nano-banana/README.md) |
+
+Run `python3 scripts/build_spaces.py` to build all four independent directories/zips;
+`python3 scripts/check_space_packages.py` verifies imports, documentation and exact
+shared runtime. No upload, account creation, local browser service or paid request.
+All five candidates share a single fixed-origin transport/task-session source.
+No MCP/SDK implementation is copied. [Policy/publication boundary](docs/TOP5_PUBLISHING.md).
+HF listings, normal installation, live media and billing remain unverified for all five.
 
 [Source](https://github.com/AceDataCloud/SunoHuggingFace) · [Issues](https://github.com/AceDataCloud/SunoHuggingFace/issues) · dev@acedata.cloud

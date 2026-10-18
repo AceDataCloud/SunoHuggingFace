@@ -54,3 +54,7 @@ HF 界面尚待协调者串行实拍；此处不拿参考图或测试日志冒�
 ## 开发与发布
 
 `npm test` 跑 Node 默认发现测试，`npm run check` 检查入口和四项 UTM。`python3 scripts/package_space.py` 只打包，不上传、不部署。HF 现有组织、只限目标 Space 的凭据与审核门槛见 [PUBLISHING.md](../docs/PUBLISHING.md)。不为数量批量复制同类 Space。
+
+## 其余四个独立服务入口
+
+当前同一源码还实现了独立的 [Seedance](../spaces/seedance/README_zh_Hans.md)、[HappyHorse](../spaces/happyhorse/README_zh_Hans.md)、[GPT Image](../spaces/gpt-image/README_zh_Hans.md)、[Nano Banana](../spaces/nano-banana/README_zh_Hans.md) Space候选，各自有原生参数、双语图文和视频/图片结果展示。根入口仍是Suno，不用合集代替独立服务发现。`scripts/build_spaces.py`产出四份独立包，共用同一传输/Token/同ID状态底座，不复制MCP/SDK。它们均未发布HF，不能声称服务词已能搜到、普通安装或首用账单已验证。

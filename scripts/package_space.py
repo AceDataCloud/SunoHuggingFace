@@ -9,6 +9,9 @@ paths = ["README.md", "AGENTS.md", "index.html", "client.mjs", "app.mjs", "style
          "readme/README_zh_Hans.md", "assets/get-api-key-en.png", "assets/create-api-key-en.png",
          "docs/asset-sources.json", "docs/attribution-contract.json", "docs/PUBLISHING.md",
          "docs/VALIDATION.md", "docs/API_CONTRACT.md"]
+# Keep source-catalog links in the root Suno README resolvable in the archive.
+paths = sorted(set(paths + [str(p.relative_to(root)) for folder in ["spaces", "docs"]
+                           for p in (root / folder).rglob("*") if p.is_file() and p.suffix in {".md", ".json"}]))
 with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED) as archive:
     for name in paths:
         info = zipfile.ZipInfo(name, date_time=(2026, 10, 18, 0, 0, 0))

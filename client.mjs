@@ -22,7 +22,7 @@ export function validateToken(value) {
 export function validateTaskId(value) {
   const id = typeof value === "string" ? value.trim() : "";
   if (!/^[A-Za-z0-9][A-Za-z0-9_.-]{0,199}$/.test(id)) {
-    throw new ServiceError("Enter the task ID returned by Suno. Do not paste a URL or token.");
+    throw new ServiceError("Enter the task ID returned by the service. Do not paste a URL or token.");
   }
   return id;
 }
@@ -88,8 +88,13 @@ export function normalizeResult(raw, requestedTaskId = "", retrieved = false) {
   return { status: failed ? "failed" : complete ? "succeeded" : "pending", taskId: id, traceId, tracks };
 }
 
-export function createClient(fetchImpl = globalThis.fetch) {
-  async function request(path, token, payload, submission) {
+// Shared fixed-origin transport for all independently packaged media Spaces.
+export async function requestJson(fetchImpl, path, token, payload, submission) {
+    if (!new Set(["/suno/audios", "/suno/tasks", "/seedance/videos", "/seedance/tasks",
+      "/happyhorse/videos", "/happyhorse/tasks", "/openai/images/generations",
+      "/openai/images/edits", "/openai/tasks", "/nano-banana/images", "/nano-banana/tasks"]).has(path)) {
+      throw new ServiceError("Unsupported service route.");
+    }
     const credential = validateToken(token);
     let response;
     try {
@@ -118,8 +123,12 @@ export function createClient(fetchImpl = globalThis.fetch) {
         response.status, submission);
     }
     return body;
-  }
+}
+
+export function createClient(fetchImpl = globalThis.fetch) {
+  const request = (path, token, payload, submission) => requestJson(fetchImpl, path, token, payload, submission);
   return {
+    validate: generationPayload,
     async generate(token, input) {
       const body = await request("/suno/audios", token, generationPayload(input), true);
       let result;
@@ -168,7 +177,7 @@ export class TaskSession {
     if (this.busy || this.state !== "idle") throw new ServiceError("Keep querying the accepted task; do not regenerate.");
     if (!acknowledged) throw new ServiceError("Review current pricing and acknowledge usage charges first.");
     validateToken(token);
-    generationPayload(input);
+    (this.client.validate || generationPayload)(input);
     this.busy = true;
     try {
       const result = await this.client.generate(token, input);
