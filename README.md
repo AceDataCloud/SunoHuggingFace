@@ -20,7 +20,7 @@ pinned: false
 
 Create music from a prompt, preserve the generation task ID, and play only the completed audio. This is an **independent integration provided by Ace Data Cloud**, not an official Suno product or endorsement by Suno or Hugging Face.
 
-**Publication status:** source candidate under review. A public Hugging Face Space has **not** been published or verified. There is no working official-install link yet, no paid live acceptance run, and no claim that Ace is in Hugging Face Inference Providers. The actual Space uses native Hugging Face Static Spaces hosting; no custom API base URL is required from users.
+**Publication status (2026-10-19):** [v0.2.0 source and five independent artifacts are released](https://github.com/AceDataCloud/SunoHuggingFace/releases/tag/v0.2.0), including the terminal cancellation/failure fix. A public Hugging Face Space has **not** been published or verified. There is no verified official-install link, paid live acceptance run, or claim that Ace is in Inference Providers. No custom API base URL is required from users. Existing company HF identity/Space-write authorization is the current publishing gate; [precise account/release continuation](docs/ACCOUNT_AND_RELEASE.md).
 
 [简体中文](readme/README_zh_Hans.md) · [Current API pricing](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=sunohuggingface_readme_pricing) · [Publication checklist](docs/PUBLISHING.md)
 

@@ -36,7 +36,7 @@ for slug, profile in profiles.items():
         # README lives at root with those same paths, without duplicated prose.
         text = (root / "spaces" / slug / name).read_text().replace("../../", "")
         (target / name).write_text(text)
-    for name in ["asset-sources.json", "attribution-contract.json", "TOP5_PUBLISHING.md",
+    for name in ["asset-sources.json", "attribution-contract.json", "TOP5_PUBLISHING.md", "ACCOUNT_AND_RELEASE.md",
                  "TOP5_VALIDATION.md", "top5-20261018/brand-policy-review.json",
                  "top5-20261018/backend-openapi-sources.json"]:
         dest = target / "docs" / name

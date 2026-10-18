@@ -1,6 +1,10 @@
 # Four additional independent Static Spaces — release materials
 
-2026-10-18 source candidate. The canonical repository remains
+2026-10-19: PR #1 merged, v0.2.0 source/artifacts released on GitHub; all five HF
+listings and live-install checks remain unverified. Necessary free publication is
+authorized; the current existing company identity/credential gate and secure
+continuation are documented in [ACCOUNT_AND_RELEASE.md](ACCOUNT_AND_RELEASE.md).
+The canonical repository remains
 `AceDataCloud/SunoHuggingFace`; each service has its own metadata, native parameter
 workflow and generated artifact. No new empty repositories or copied runtime
 forks are required to publish separate HF Space entries.

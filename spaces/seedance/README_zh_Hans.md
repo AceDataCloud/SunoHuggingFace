@@ -1,6 +1,6 @@
 # Seedance by Ace Data Cloud：Hugging Face独立Space候选
 
-这是Ace Data Cloud独立提供的Seedance集成，不冒充服务品牌或HF官方产品。**源码候选，未发布HF，安装URL/版本未知，未真实生成或验证账单。** 共用单一源码底座，但原生参数、动作与结果展示按服务分别实现，不是只换名字的Suno表单。[English](README.md) · [当前价格](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=seedancehuggingface_readme_zh_pricing)。
+这是Ace Data Cloud独立提供的Seedance集成，不冒充服务品牌或HF官方产品。**源码已合并，2026-10-19已发布GitHub v0.2.0独立包；仍未发布HF，HF安装URL/版本未知，未真实生成或验证账单。** 共用单一源码底座，但原生参数、动作与结果展示按服务分别实现，不是只换名字的Suno表单。[English](README.md) · [当前价格](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=seedancehuggingface_readme_zh_pricing)。
 
 ## 1. 官方安装入口
 

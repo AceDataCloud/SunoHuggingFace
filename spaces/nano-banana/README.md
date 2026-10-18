@@ -17,13 +17,13 @@ pinned: false
 
 # Nano Banana by Ace Data Cloud — Hugging Face Space candidate
 
-Independent service integration by **Ace Data Cloud**, not an official product or endorsement of Nano Banana or Hugging Face. **Source candidate only: no verified public HF Space URL, listing, installation, real generation or invoice.** This directory is a real service-specific app profile built from one shared canonical source repository, not a tutorial substitute or an empty repository.
+Independent service integration by **Ace Data Cloud**, not an official product or endorsement of Nano Banana or Hugging Face. **Source is merged and v0.2.0 artifacts are released (2026-10-19); there is still no verified public HF Space URL, listing, installation, real generation or invoice.** This directory is a real service-specific app profile built from one shared canonical source repository, not a tutorial substitute or an empty repository.
 
 [简体中文](README_zh_Hans.md) · [Current pricing](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=nanobananahuggingface_readme_pricing) · [Publication gates](../../docs/TOP5_PUBLISHING.md)
 
 ## 1. Find the official entry after release
 
-After separately authorized publication, search [HF Spaces for Nano Banana](https://huggingface.co/spaces?search=nano-banana), confirm **Nano Banana by Ace Data Cloud** and the verified Ace publisher, open its app, or use **⋮ → Duplicate this Space**. Current install link/version is unknown; do not mistake an unrelated brand demo for this integration. HF Static Spaces have no paid-plan requirement, but API requests are separately billed by Ace. This static app has no MCP badge and does not register Ace as an Inference Provider.
+After separately authorized publication, search [HF Spaces for Nano Banana](https://huggingface.co/spaces?search=nano-banana), confirm **Nano Banana by Ace Data Cloud** and the verified Ace publisher, open its app, or use **⋮ → Duplicate this Space**. GitHub release0.2.0 is available; HF install link/version is unknown; do not mistake an unrelated brand demo for this integration. HF Static Spaces have no paid-plan requirement, but API requests are separately billed by Ace. This static app has no MCP badge and does not register Ace as an Inference Provider.
 
 ## 2. Register/sign in and get an application API Token
 
