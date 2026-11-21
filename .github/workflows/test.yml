@@ -15,3 +15,13 @@ jobs:
           python-version: '3.12'
       - run: npm test
       - run: npm run check
+      - name: Build and check standalone Space archives
+        run: |
+          python3 scripts/build_spaces.py
+          python3 scripts/check_space_packages.py
+      - name: Make the standalone ACE Music Space available for download
+        uses: actions/upload-artifact@v4
+        with:
+          name: acemusic-static-space
+          path: artifacts/acemusic-static-space.zip
+          if-no-files-found: error

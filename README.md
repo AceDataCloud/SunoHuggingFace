@@ -24,6 +24,10 @@ Create music from a prompt, preserve the generation task ID, and play only the c
 
 [简体中文](readme/README_zh_Hans.md) · [Current API pricing](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=sunohuggingface_readme_pricing) · [Publication checklist](docs/PUBLISHING.md)
 
+## Standalone ACE Music Space
+
+[ACE Music](spaces/acemusic/README.md) supports owned task recovery, songs, lyrics, reference MP3 import, covers and mashups. Download the independent `acemusic-static-space` artifact from a successful **Validate Space** run, or build `artifacts/acemusic-static-space.zip` with `python3 scripts/build_spaces.py`. Run it locally or upload its contents to a Static Space you control.
+
 ## 1. Open the correct Space
 
 After publication, search [Hugging Face Spaces for Suno](https://huggingface.co/spaces?search=suno) and confirm the title **Suno by Ace Data Cloud** and the verified Ace publisher. Until that listing is verified, use this repository for source review; do not mistake another Suno demo for this integration.

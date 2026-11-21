@@ -1,7 +1,7 @@
 # SunoHuggingFace
 
-Canonical source for Suno plus four independent HF Static Space builds. The
-`studio/` profiles own Seedance/HappyHorse/GPT Image/Nano Banana parameters while
+Canonical source for Suno plus five independent HF Static Space builds. The
+`studio/` profiles own ACE Music/Seedance/HappyHorse/GPT Image/Nano Banana parameters while
 sharing `client.mjs` transport/state. Do not copy or modify shared MCP/SDK sources.
 
 - Run `npm test` (Node built-in test discovery) and `npm run check` before a PR.

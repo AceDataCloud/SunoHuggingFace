@@ -1,3 +1,4 @@
+import { aceMusicResult } from "./acemusic.mjs";
 import { requestJson, ServiceError, validateToken, validateTaskId, safeMediaUrl } from "../client.mjs";
 import { prepareRequest, PROFILES } from "./services.mjs";
 
@@ -26,6 +27,7 @@ export function normalizeMedia(raw, slug, requestedId = "", retrieved = false) {
   let body = retrieved && Object.hasOwn(raw, "response") ? raw.response : raw;
   if (typeof body === "string") { try { body = JSON.parse(body); } catch { body = null; } }
   if (!body || typeof body !== "object" || Array.isArray(body)) body = {};
+  if (slug === "acemusic") return aceMusicResult(raw, body, taskId);
   const states = [], media = []; let failed = false;
   function visit(node, depth = 0) {
     if (!node || typeof node !== "object" || depth > 8) return;
@@ -59,7 +61,11 @@ export function normalizeMedia(raw, slug, requestedId = "", retrieved = false) {
 function redact(result, token) {
   if (result.taskId && result.taskId.includes(token)) throw new ServiceError("Unexpected task identity; inspect history.", null, true);
   return { ...result, traceId: result.traceId.replaceAll(token, "[redacted]"),
-    media: result.media.filter((m) => !m.url.includes(token)).map((m) => ({ ...m, title: m.title.replaceAll(token, "[redacted]") })) };
+    media: result.media.filter(item => !item.url?.includes(token) && !item.trackId?.includes(token)).map(item => {
+      const clean = { ...item, title: item.title.replaceAll(token, "[redacted]") };
+      if (item.kind === "lyrics") clean.text = item.text.replaceAll(token, "[redacted]");
+      return clean;
+    }) };
 }
 
 export function createMediaClient(slug, fetchImpl = globalThis.fetch) {

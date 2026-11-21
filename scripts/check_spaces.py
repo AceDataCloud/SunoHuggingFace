@@ -5,7 +5,7 @@ import json
 import re
 
 root = Path(__file__).resolve().parents[1]
-names = {"seedance": "Seedance", "happyhorse": "HappyHorse", "gpt-image": "GPT Image", "nano-banana": "Nano Banana"}
+names = {"acemusic": "ACE Music", "seedance": "Seedance", "happyhorse": "HappyHorse", "gpt-image": "GPT Image", "nano-banana": "Nano Banana"}
 contract = json.loads((root / "docs/attribution-contract.json").read_text())["contract"]
 count = 0
 for slug, name in names.items():
@@ -28,4 +28,4 @@ for slug, name in names.items():
                 for key in contract["utm_keys"]:
                     assert re.fullmatch(contract["tag_pattern"], qs[key][0])
                 count += 1
-print(f"Four independent HF manifests/guides and {count} four-label CTA links validated.")
+print(f"{len(names)} independent HF manifests/guides and {count} four-label CTA links validated.")

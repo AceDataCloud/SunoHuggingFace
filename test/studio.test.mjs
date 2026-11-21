@@ -7,6 +7,7 @@ import { createMediaClient, normalizeMedia } from "../studio/runtime.mjs";
 
 const secret = "fixture-api-token-not-real";
 const defaults = {
+  acemusic: { mode: "idea", model: "acemusic-v1.1", prompt: "A night train song" },
   seedance: { mode: "text", model: "doubao-seedance-2-0-fast-260128", prompt: "A mug in sunlight", resolution: "480p", ratio: "16:9", duration: 5, generateAudio: false },
   happyhorse: { mode: "generate", model: "happyhorse-1.1-t2v", prompt: "A horse running", resolution: "720P", ratio: "16:9", duration: 5 },
   "gpt-image": { mode: "generate", model: "gpt-image-2", prompt: "A blue teapot", count: 1, size: "1024x1024", quality: "auto", background: "auto", outputFormat: "png" },
@@ -108,7 +109,7 @@ test("native payloads conform to existing single-source API schemas", () => {
   }
 });
 
-test("all four clients use fixed native paths and same-ID retrieval, with no paid retries", async () => {
+test("all media clients use fixed native paths and same-ID retrieval, with no paid retries", async () => {
   for (const slug of Object.keys(PROFILES)) {
     const calls = [], client = createMediaClient(slug, async (url, options) => {
       calls.push({ url, options });
@@ -134,7 +135,7 @@ test("nested video result and image results normalize only after terminal proof"
   assert.throws(() => normalizeMedia({ id: "other" }, "seedance", "task1", true), /mismatch/);
 });
 
-test("all four media profiles preserve terminal failure when finished_at is null", () => {
+test("all media profiles preserve terminal failure when finished_at is null", () => {
   for (const slug of Object.keys(PROFILES)) {
     for (const state of ["failed", "cancelled", "canceled", "rejected", "error"]) {
       for (const position of ["wrapper", "body", "item"]) {
