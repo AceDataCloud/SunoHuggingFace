@@ -1,7 +1,7 @@
 # Four-service validation and free UI queue
 
 2026-10-18. `npm test` uses synthetic fixtures only. `npm run check` validates
-modules, contracts, metadata and four-label CTA links. `python3 scripts/build_spaces.py`
+modules, contracts, metadata and three-label CTA links. `python3 scripts/build_spaces.py`
 builds offline artifacts; it never uploads or starts a server.
 
 ## Coordinator-only browser queue

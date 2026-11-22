@@ -22,7 +22,7 @@ Create music from a prompt, preserve the generation task ID, and play only the c
 
 **Publication status (2026-10-19):** [v0.2.0 source and five independent artifacts are released](https://github.com/AceDataCloud/SunoHuggingFace/releases/tag/v0.2.0), including the terminal cancellation/failure fix. A public Hugging Face Space has **not** been published or verified. There is no verified official-install link, paid live acceptance run, or claim that Ace is in Inference Providers. No custom API base URL is required from users. Existing company HF identity/Space-write authorization is the current publishing gate; [precise account/release continuation](docs/ACCOUNT_AND_RELEASE.md).
 
-[简体中文](readme/README_zh_Hans.md) · [Current API pricing](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=sunohuggingface_readme_pricing) · [Publication checklist](docs/PUBLISHING.md)
+[简体中文](readme/README_zh_Hans.md) · [Current API pricing](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen) · [Publication checklist](docs/PUBLISHING.md)
 
 ## 1. Open the correct Space
 
@@ -32,7 +32,7 @@ A public Static Space can be opened directly and duplicated with **⋮ → Dupli
 
 ## 2. Get an Ace application API token
 
-1. Register or sign in at [Ace Data Cloud → Applications](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=sunohuggingface_readme_api_key).
+1. Register or sign in at [Ace Data Cloud → Applications](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen).
 2. Open **General application**. If absent, choose **Initialize General Application**. A general key can use the services your account is entitled to; a dedicated application's key is limited to its service. Check **Suno** access, current pricing and balance.
 3. Copy the API Key using the icon marked **1**, or open **Manage Keys** marked **2** to create a separate key.
 
@@ -62,7 +62,7 @@ To create music when you authorize the API charge:
 
 1. Open **Create new music — uses your Ace balance**.
 2. Choose the exact model (`chirp-v6`, `chirp-v6-wild`, or `chirp-v6-mini`), keep **Instrumental** selected for a first example, and enter: `A gentle instrumental piano melody for a sunrise, no vocals.` The simple prompt mode accepts up to 500 characters. Model availability and price remain subject to Ace's current service.
-3. Review [current pricing, permissions and balance](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=sunohuggingface_readme_first_run), check the consent box, then click **Generate once — uses Ace balance**. This sends one `action=generate`, `custom=false`, `async=true` request. It does not retry or replace the model.
+3. Review [current pricing, permissions and balance](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen), check the consent box, then click **Generate once — uses Ace balance**. This sends one `action=generate`, `custom=false`, `async=true` request. It does not retry or replace the model.
 
 The initial accepted response is normally **pending**, not success. Its task ID fills the lookup field; save it before closing the tab. Pending tasks and uncertain connection outcomes block another generation in the tab.
 
@@ -70,7 +70,7 @@ The initial accepted response is normally **pending**, not success. Its task ID 
 
 Click **Retrieve same task** no more than once every 15 seconds. There is no automatic background polling and no call to the generation endpoint from this control. A playable URL in an unfinished result is only a preview and is hidden. **Succeeded** is shown only with explicit terminal success and no pending/failed state. Final HTTPS audio links then appear with audio controls; **failed** directs you to history.
 
-If a connection fails after submission, inspect the task/request history in [Ace Applications](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=sunohuggingface_readme_history). Do not regenerate merely to poll. A new tab cannot know earlier submissions; check history before starting over. After a terminal or reviewed uncertain request, **I reviewed history — prepare another task** resets this tab for a new explicitly authorized generation.
+If a connection fails after submission, inspect the task/request history in [Ace Applications](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen). Do not regenerate merely to poll. A new tab cannot know earlier submissions; check history before starting over. After a terminal or reviewed uncertain request, **I reviewed history — prepare another task** resets this tab for a new explicitly authorized generation.
 
 Use the task/trace ID to reconcile the actual charge in Ace history. No paid-generation, media reachability, unique final invoice or customer acquisition has been verified for this Space yet.
 

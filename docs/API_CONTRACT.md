@@ -15,7 +15,7 @@ Runtime errors retain HTTP 429/403/500 and do not switch models or retry creatio
 No token, task query or generation was submitted for that check. It proves the
 current preflight boundary, not a successful authenticated browser call.
 
-The committed four-label attribution snapshot is read from AuthBackend's current
-`contracts/marketing-attribution.json` (producer PlatformBackend). Labels follow
-that contract; signup/first-use/revenue results remain unverified. No global
-attribution rules were changed.
+The Space links use three acquisition labels, `utm_source`,
+`utm_medium`, and `utm_campaign`. The pinned AuthBackend snapshot and its
+PlatformBackend producer revision are recorded in `docs/attribution-contract.json`
+and `docs/asset-sources.json`. Signup, first use and revenue remain unverified.
