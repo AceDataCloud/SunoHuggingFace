@@ -9,10 +9,9 @@ const session = new TaskSession(createMediaClient(slug));
 $("title").textContent = profile.title; $("description").textContent = profile.description;
 $("scope").textContent = profile.scope;
 $("allowed-apis").textContent = "Allowed APIs: " + [...profile.generationPaths, profile.taskPath].join(", ");
-for (const [id, route, part] of [["token-link", "console/applications", "api_key"], ["price-link", "models", "pricing"]]) {
+for (const [id, route] of [["token-link", "console/applications"], ["price-link", "models"]]) {
   const url = new URL("https://platform.acedata.cloud/" + route);
-  Object.entries({ utm_source: "huggingface", utm_medium: "referral", utm_campaign: "evergreen",
-    utm_content: `${slug.replaceAll("-", "")}huggingface_space_${part}` }).forEach(([k, v]) => url.searchParams.set(k, v));
+  Object.entries({ utm_source: "huggingface", utm_medium: "referral", utm_campaign: "evergreen" }).forEach(([k, v]) => url.searchParams.set(k, v));
   $(id).href = url.href; $(id).target = "_blank"; $(id).rel = "noopener noreferrer";
 }
 function options(element, values) {
