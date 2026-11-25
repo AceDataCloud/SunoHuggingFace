@@ -1,3 +1,4 @@
+import { aceMusicRequest } from "./acemusic.mjs";
 import { ServiceError, safeMediaUrl } from "../client.mjs";
 
 const choices = (items) => items.map((value) => ({ value, label: value }));
@@ -5,6 +6,30 @@ const field = (key, label, type, extra = {}) => ({ key, label, type, ...extra })
 const ratios = ["16:9", "9:16", "1:1", "4:3", "3:4"];
 
 export const PROFILES = Object.freeze({
+  acemusic: {
+    name: "ACE Music", slug: "acemusic", emoji: "🎵", media: "audio",
+    title: "ACE Music by Ace Data Cloud", tags: ["acemusic", "music-generation", "audio", "acedatacloud"],
+    description: "Write lyrics, generate songs, upload a reference, cover a track or blend two tracks.",
+    generationPaths: ["/acemusic/audios", "/acemusic/lyrics"], taskPath: "/acemusic/tasks",
+    modes: [
+      { value: "idea", label: "Generate from an idea" }, { value: "custom", label: "Generate from custom lyrics" },
+      { value: "lyrics", label: "Write lyrics" }, { value: "upload", label: "Upload a reference MP3" },
+      { value: "cover", label: "Cover one owned track" }, { value: "mashup", label: "Blend two owned tracks" },
+    ],
+    models: { all: choices(["acemusic-v1.1", "acemusic-v1"]), cover: choices(["acemusic-v1.1"]), mashup: choices(["acemusic-v1.1"]), lyrics: [], upload: [] },
+    example: "A warm folk song about taking the night train home.",
+    fields: [
+      field("prompt", "Song or lyrics idea", "textarea", { required: true, maxLength: 20000, modes: ["idea", "lyrics"] }),
+      field("title", "Song title (required for custom songs)", "text", { maxLength: 20000, modes: ["custom", "cover", "mashup"] }),
+      field("lyric", "Lyrics with optional verse and chorus labels", "textarea", { required: true, maxLength: 20000, modes: ["custom", "cover", "mashup"] }),
+      field("style", "Musical style (optional for writing lyrics)", "textarea", { maxLength: 20000, modes: ["custom", "cover", "mashup", "lyrics"] }),
+      field("audioUrl", "Public HTTPS MP3 URL you are authorized to use", "url", { required: true, modes: ["upload"] }),
+      field("track", "Owned track ID from a completed result", "text", { required: true, modes: ["cover", "mashup"] }),
+      field("secondTrack", "Second, different owned track ID", "text", { required: true, modes: ["mashup"] }),
+      field("influence", "Reference audio influence (1–100)", "number", { min: 1, max: 100, value: 60, modes: ["cover", "mashup"] }),
+    ],
+    scope: "A completed song, cover or mashup returns two candidates. Reference import and lyric writing are separately priced. Use a returned track ID for a cover or mashup, and the original task ID to retrieve results.",
+  },
   seedance: {
     name: "Seedance", slug: "seedance", emoji: "🎬", media: "video",
     title: "Seedance by Ace Data Cloud", tags: ["seedance", "video-generation", "image-to-video", "acedatacloud"],
@@ -103,6 +128,7 @@ export function referenceUrls(value, min, max) {
 export function prepareRequest(slug, input) {
   const profile = PROFILES[slug]; need(profile, "Unknown media service.");
   const mode = pick(input.mode, profile.modes.map((x) => x.value), "operation");
+  if (slug === "acemusic") return aceMusicRequest(input);
   const model = pick(input.model, (profile.models[mode] || profile.models.all).map((x) => x.value), "model");
   const prompt = text(input.prompt, slug === "seedance" ? 1000 : 10000);
   let body, path = profile.generationPaths[0];

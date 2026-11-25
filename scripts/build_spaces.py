@@ -1,4 +1,4 @@
-"""Build four independent HF Static Space directories/zips from one source tree.
+"""Build independent HF Static Space directories/zips from one source tree.
 
 No network, account creation, Hub upload, or paid request. The artifacts are real
 apps; they have distinct native parameters while sharing the reviewed runtime.
@@ -22,10 +22,15 @@ for slug, profile in profiles.items():
     target.mkdir(parents=True, exist_ok=True)
     entry = (root / "studio/index.html").read_text().replace(
         "__SERVICE_SLUG__", slug).replace("__SERVICE_NAME__", profile["name"])
-    (target / "index.html").write_text(entry)
+    attribution = ("ACE Music is provided by Ace Data Cloud." if slug == "acemusic" else
+                   "Independent integration by Ace Data Cloud, not an official or endorsed product of the named service or Hugging Face.")
+    (target / "index.html").write_text(entry.replace("__SERVICE_ATTRIBUTION__", attribution))
     for name in ["client.mjs", "styles.css", "AGENTS.md", "LICENSE", "PRIVACY.md"]:
         shutil.copy2(root / name, target / name)
-    for name in ["services.mjs", "runtime.mjs", "app.mjs"]:
+    packaged_instructions = root / "spaces" / slug / "AGENTS.md"
+    if packaged_instructions.is_file():
+        shutil.copy2(packaged_instructions, target / "AGENTS.md")
+    for name in ["services.mjs", "runtime.mjs", "app.mjs", "acemusic.mjs"]:
         (target / "studio").mkdir(exist_ok=True)
         shutil.copy2(root / "studio" / name, target / "studio" / name)
     for name in ["get-api-key-en.png", "create-api-key-en.png"]:

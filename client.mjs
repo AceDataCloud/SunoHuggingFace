@@ -91,7 +91,7 @@ export function normalizeResult(raw, requestedTaskId = "", retrieved = false) {
 
 // Shared fixed-origin transport for all independently packaged media Spaces.
 export async function requestJson(fetchImpl, path, token, payload, submission) {
-    if (!new Set(["/suno/audios", "/suno/tasks", "/seedance/videos", "/seedance/tasks",
+    if (!new Set(["/acemusic/audios", "/acemusic/lyrics", "/acemusic/tasks", "/suno/audios", "/suno/tasks", "/seedance/videos", "/seedance/tasks",
       "/happyhorse/videos", "/happyhorse/tasks", "/openai/images/generations",
       "/openai/images/edits", "/openai/tasks", "/nano-banana/images", "/nano-banana/tasks"]).has(path)) {
       throw new ServiceError("Unsupported service route.");

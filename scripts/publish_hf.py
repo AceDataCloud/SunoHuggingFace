@@ -13,7 +13,8 @@ import re
 import tempfile
 import zipfile
 
-SERVICES = ("suno", "seedance", "happyhorse", "gpt-image", "nano-banana")
+LEGACY_SERVICES = ("suno", "seedance", "happyhorse", "gpt-image", "nano-banana")
+SERVICES = (*LEGACY_SERVICES, "acemusic")
 
 
 def checked_archives(directory):
@@ -21,8 +22,8 @@ def checked_archives(directory):
     directory = Path(directory)
     manifest = json.loads((directory / "release-manifest.json").read_text())
     assets = manifest["assets"]
-    if sorted(a["service"] for a in assets) != sorted(SERVICES):
-        raise ValueError("Manifest must contain exactly the five reviewed services.")
+    if sorted(a["service"] for a in assets) not in (sorted(LEGACY_SERVICES), sorted(SERVICES)):
+        raise ValueError("Manifest must contain a complete reviewed service set.")
     verified = []
     for asset in assets:
         expected_name = asset["service"] + "-static-space.zip"

@@ -9,7 +9,7 @@
 </head>
 <body><main>
   <header><div><h1 id="title">__SERVICE_NAME__ by Ace Data Cloud</h1><p id="description"></p></div></header>
-  <p>Independent integration by Ace Data Cloud, not an official or endorsed product of the named service or Hugging Face. API generation uses your Ace balance; HF credits do not apply.</p>
+  <p>__SERVICE_ATTRIBUTION__ API generation uses your Ace balance; HF credits do not apply.</p>
   <nav aria-label="Setup"><a id="token-link">Get an Ace API token</a><a id="price-link">Current pricing</a><a href="README_zh_Hans.md">中文图文指南</a></nav>
   <section><h2>1. Connect your Ace account</h2><p>Register or sign in → Applications → General application (initialize if absent) → copy API Key, or Manage Keys → Create. Check service access, current prices/balance, expiry and Allowed APIs listed below.</p><p id="allowed-apis"></p>
     <label for="token">Ace application API token</label><input type="password" id="token" autocomplete="off" spellcheck="false" placeholder="Token only, without Bearer">
@@ -30,6 +30,6 @@
     <button type="button" id="new-task" class="secondary">I reviewed history — prepare another task</button>
   </section></details>
   <section><h2>3. Terminal result</h2><p role="status" aria-live="polite" id="status">No request has been sent.</p><p id="identity"></p><div id="media"></div>
-    <p>Final media is only shown for explicit terminal success. Use the task/trace ID in Ace request history to inspect the actual charge; a green status is not invoice proof.</p>
+    <p>Only results from completed outputs are shown. Use the task/trace ID in Ace request history to inspect the actual charge; a green status is not invoice proof.</p>
   </section><footer><a href="https://github.com/AceDataCloud/SunoHuggingFace">Canonical source</a> · <a href="PRIVACY.md">Privacy</a> · <a href="https://github.com/AceDataCloud/SunoHuggingFace/issues">Support</a></footer>
 </main></body></html>

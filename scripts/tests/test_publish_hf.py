@@ -12,9 +12,9 @@ spec.loader.exec_module(publisher)
 
 
 class PublisherTests(unittest.TestCase):
-    def fixture(self, folder, unsafe=False):
+    def fixture(self, folder, unsafe=False, services=publisher.SERVICES):
         assets = []
-        for slug in publisher.SERVICES:
+        for slug in services:
             path = folder / (slug + "-static-space.zip")
             with zipfile.ZipFile(path, "w") as archive:
                 archive.writestr("README.md", "---\nsdk: static\napp_file: index.html\n---\n")
@@ -25,12 +25,13 @@ class PublisherTests(unittest.TestCase):
                            "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
         (folder / "release-manifest.json").write_text(json.dumps({"assets": assets}))
 
-    def test_offline_manifest_and_all_five_archives(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            folder = Path(tmp)
-            self.fixture(folder)
-            _, archives = publisher.checked_archives(folder)
-            self.assertEqual(len(archives), 5)
+    def test_offline_manifest_supports_current_and_historical_releases(self):
+        for services in (publisher.SERVICES, publisher.LEGACY_SERVICES):
+            with self.subTest(services=services), tempfile.TemporaryDirectory() as tmp:
+                folder = Path(tmp)
+                self.fixture(folder, services=services)
+                _, archives = publisher.checked_archives(folder)
+                self.assertEqual([slug for slug, _ in archives], list(services))
 
     def test_mismatch_and_archive_traversal_fail_closed(self):
         with tempfile.TemporaryDirectory() as tmp:

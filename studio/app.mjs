@@ -9,7 +9,7 @@ const session = new TaskSession(createMediaClient(slug));
 $("title").textContent = profile.title; $("description").textContent = profile.description;
 $("scope").textContent = profile.scope;
 $("allowed-apis").textContent = "Allowed APIs: " + [...profile.generationPaths, profile.taskPath].join(", ");
-for (const [id, route] of [["token-link", "console/applications"], ["price-link", "models"]]) {
+for (const [id, route] of [["token-link", "console/applications"], ["price-link", slug === "acemusic" ? "services/acemusic" : "models"]]) {
   const url = new URL("https://platform.acedata.cloud/" + route);
   Object.entries({ utm_source: "huggingface", utm_medium: "referral", utm_campaign: "evergreen" }).forEach(([k, v]) => url.searchParams.set(k, v));
   $(id).href = url.href; $(id).target = "_blank"; $(id).rel = "noopener noreferrer";
@@ -36,7 +36,10 @@ for (const spec of profile.fields) {
   block.append(label, input); $("fields").append(block); controls.set(spec.key, { spec, block, input });
 }
 function modeChanged() {
-  options($("model"), profile.models[$("mode").value] || profile.models.all);
+  const models = profile.models[$("mode").value] || profile.models.all;
+  options($("model"), models);
+  $("model").hidden = models.length === 0;
+  document.querySelector('label[for="model"]').hidden = models.length === 0;
   for (const { spec, block, input } of controls.values()) {
     const visible = !spec.modes || spec.modes.includes($("mode").value);
     block.hidden = !visible; input.disabled = !visible; input.required = visible && Boolean(spec.required);
@@ -56,16 +59,29 @@ function buttons() {
 function render(result) {
   $("media").replaceChildren();
   $("status").textContent = result.status === "pending" ? "Pending. Keep this ID and query again after 15 seconds. Do not regenerate." :
+    result.status === "partial_failed" ? "Partially failed. Completed tracks from this task appear below." :
     result.status === "failed" ? "Task failed. Inspect the original task/trace in Ace history." : "Task succeeded. Final media returned by the service is below.";
   $("task-id").value = result.taskId;
   $("identity").textContent = `Task: ${result.taskId || "synchronous result; inspect request history"}` + (result.traceId ? ` · Trace: ${result.traceId}` : "");
   for (const item of result.media) {
     const card = document.createElement("article"), heading = document.createElement("h3"); heading.textContent = item.title;
-    const element = document.createElement(item.kind === "video" ? "video" : "img");
+    if (item.kind === "lyrics") {
+      const lyrics = document.createElement("pre");
+      lyrics.textContent = item.text;
+      card.append(heading, lyrics);
+      $("media").append(card);
+      continue;
+    }
+    const element = document.createElement(item.kind === "image" ? "img" : item.kind);
     element.src = item.url;
-    if (item.kind === "video") { element.controls = true; element.preload = "none"; }
+    if (item.kind === "video" || item.kind === "audio") { element.controls = true; element.preload = "none"; }
     else { element.alt = profile.name + " final output"; element.loading = "lazy"; element.referrerPolicy = "no-referrer"; }
     card.append(heading, element);
+    if (item.trackId) {
+      const identity = document.createElement("p");
+      identity.textContent = "Track ID: " + item.trackId;
+      card.append(identity);
+    }
     const link = document.createElement("a"); link.href = item.url; link.textContent = "Open/download final result";
     if (item.url.startsWith("data:image/")) link.download = profile.slug + "-result";
     else { link.target = "_blank"; link.rel = "noopener noreferrer"; link.referrerPolicy = "no-referrer"; }
