@@ -25,7 +25,7 @@ Play and download the two candidates from a completed ACE Music song task, write
 
 Extract `acemusic-static-space.zip`, run `python3 -m http.server 8000` from the extracted directory, and open `http://localhost:8000`. To use your own Hugging Face Static Space, upload the extracted files, including this README and `index.html`, at its root.
 
-Paste an [Ace application API key](https://platform.acedata.cloud/console/credentials?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=acemusic_space_key) in the password field. The key stays in the tab and is sent directly to the Ace API. Do not put it in the ZIP or HF Space variables. [View ACE Music access and pricing](https://platform.acedata.cloud/services/acemusic?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=acemusic_space_pricing)
+Paste an [Ace application API key](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen) in the password field. The key stays in the tab and is sent directly to the Ace API. Do not put it in the ZIP or HF Space variables. [View ACE Music access and pricing](https://platform.acedata.cloud/services/acemusic?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen)
 
 ## Retrieve or create
 

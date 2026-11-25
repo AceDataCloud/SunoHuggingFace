@@ -19,7 +19,7 @@ pinned: false
 
 Independent service integration by **Ace Data Cloud**, not an official product or endorsement of GPT Image or Hugging Face. **Source is merged and v0.2.0 artifacts are released (2026-10-19); there is still no verified public HF Space URL, listing, installation, real generation or invoice.** This directory is a real service-specific app profile built from one shared canonical source repository, not a tutorial substitute or an empty repository.
 
-[简体中文](README_zh_Hans.md) · [Current pricing](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=gptimagehuggingface_readme_pricing) · [Publication gates](../../docs/TOP5_PUBLISHING.md)
+[简体中文](README_zh_Hans.md) · [Current pricing](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen) · [Publication gates](../../docs/TOP5_PUBLISHING.md)
 
 ## 1. Find the official entry after release
 
@@ -27,7 +27,7 @@ After separately authorized publication, search [HF Spaces for GPT Image](https:
 
 ## 2. Register/sign in and get an application API Token
 
-Open [Ace Applications](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=gptimagehuggingface_readme_api_key); register or sign in. Find **General application** or initialize it if absent. Check GPT Image service access, Allowed APIs, expiry, current price and balance. Copy the Token using the copy icon marked1, or **Manage Keys** marked2 for a dedicated credential.
+Open [Ace Applications](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen); register or sign in. Find **General application** or initialize it if absent. Check GPT Image service access, Allowed APIs, expiry, current price and balance. Copy the Token using the copy icon marked1, or **Manage Keys** marked2 for a dedicated credential.
 
 ![Actual redacted Ace Console copy/manage API Key](../../assets/get-api-key-en.png)
 
@@ -64,9 +64,9 @@ The initial example configuration is `gpt-image-2; mode=generate; size=1024x1024
 
 Existing successful task? Use **2. Retrieve the same existing task**, paste its **Ace task ID** and click **Retrieve same task**. This calls `/openai/tasks` with `action=retrieve,id=<same id>` only. Do not use an upstream nested data.id instead.
 
-For a new request, expand **Create or edit media — uses your Ace balance**, select mode/exact model and the corresponding fields. Check [current pricing and balance](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=gptimagehuggingface_readme_first_run), acknowledge the explicit usage/input-rights checkbox, then **Submit once — uses Ace balance**. One async request is sent; pending/task ID is not completion. Save the ID. Pending or ambiguous accepted responses block another generation; network/5xx/invalid2xx require checking history first. New tabs do not know old submissions.
+For a new request, expand **Create or edit media — uses your Ace balance**, select mode/exact model and the corresponding fields. Check [current pricing and balance](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen), acknowledge the explicit usage/input-rights checkbox, then **Submit once — uses Ace balance**. One async request is sent; pending/task ID is not completion. Save the ID. Pending or ambiguous accepted responses block another generation; network/5xx/invalid2xx require checking history first. New tabs do not know old submissions.
 
-Manual same-ID queries are15seconds apart. Explicit pending state, missing terminal proof or preview links never become final results. Failed wins over success. Explicit terminal success displays a image gallery and final links; permitted image Base64 is rendered locally only for image services. Check actual charge in [Ace history](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=gptimagehuggingface_readme_history) by task/trace ID. This candidate has no verified live final media, unique invoice or signup/revenue.
+Manual same-ID queries are15seconds apart. Explicit pending state, missing terminal proof or preview links never become final results. Failed wins over success. Explicit terminal success displays a image gallery and final links; permitted image Base64 is rendered locally only for image services. Check actual charge in [Ace history](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen) by task/trace ID. This candidate has no verified live final media, unique invoice or signup/revenue.
 
 ## Troubleshooting
 

@@ -15,9 +15,9 @@
   },
   {
     "file": "docs/attribution-contract.json",
-    "url": "https://github.com/AceDataCloud/AuthBackend/blob/main/contracts/marketing-attribution.json",
-    "git_blob_sha": "0cde5d7386b2c3d32f3d7ad70b230dc1ea9b37a0",
-    "date": "2026-10-18 current AuthBackend contract readback",
+    "url": "https://github.com/AceDataCloud/AuthBackend/blob/e5149ca995f3d785a7adf6aefee328c0080c55ca/contracts/marketing-attribution.json",
+    "git_blob_sha": "5ed3bc72fe02d2eadf2024ca315003afa2bf9fc8",
+    "date": "2026-11-22 acquisition contract update",
     "scope": "Unmodified existing asset/contract"
   }
 ]

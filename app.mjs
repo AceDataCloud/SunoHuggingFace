@@ -4,8 +4,7 @@ const $ = (id) => document.getElementById(id);
 const session = new TaskSession(createClient());
 for (const link of document.querySelectorAll("[data-cta]")) {
   const url = new URL(link.href);
-  Object.entries({ utm_source: "huggingface", utm_medium: "referral", utm_campaign: "evergreen",
-    utm_content: `sunohuggingface_space_${link.dataset.cta.replaceAll("-", "_")}` })
+  Object.entries({ utm_source: "huggingface", utm_medium: "referral", utm_campaign: "evergreen" })
     .forEach(([key, value]) => url.searchParams.set(key, value));
   link.href = url.href;
   link.target = "_blank";

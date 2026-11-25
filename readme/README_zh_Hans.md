@@ -2,7 +2,7 @@
 
 在 Space 里输入提示词生成音乐，保存任务 ID，再查询同一个任务并播放终态音频。集成由 **Ace Data Cloud 独立提供**，不冒充 Suno 官方产品，也不表示获得 Suno 或 Hugging Face 背书。
 
-**2026-10-19状态：产品PR已合并，[v0.2.0五项独立包已正式发布](https://github.com/AceDataCloud/SunoHuggingFace/releases/tag/v0.2.0)，含取消/失败终态优先级修复；尚无已验证的公开HF Space。** 未真实发起付费生成、验证搜索安装或证明Ace进入官方服务商列表。当前缺现有公司HF身份/Space写权限的可用授权，不能据此认定公司无账号；[精确续发步骤](../docs/ACCOUNT_AND_RELEASE.md)。[英文说明](../README.md) · [当前价格](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=sunohuggingface_zh_pricing)。
+**2026-10-19状态：产品PR已合并，[v0.2.0五项独立包已正式发布](https://github.com/AceDataCloud/SunoHuggingFace/releases/tag/v0.2.0)，含取消/失败终态优先级修复；尚无已验证的公开HF Space。** 未真实发起付费生成、验证搜索安装或证明Ace进入官方服务商列表。当前缺现有公司HF身份/Space写权限的可用授权，不能据此认定公司无账号；[精确续发步骤](../docs/ACCOUNT_AND_RELEASE.md)。[英文说明](../README.md) · [当前价格](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen)。
 
 ## 1. 找到正确入口
 
@@ -10,7 +10,7 @@
 
 ## 2. 获取正确 API Token
 
-1. 打开 [Ace Data Cloud → Applications](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=sunohuggingface_zh_api_key)，注册或登录。
+1. 打开 [Ace Data Cloud → Applications](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen)，注册或登录。
 2. 找到 **General application**。不存在时先点 **Initialize General Application**。通用 Key 可调用账户有权使用的服务，专用应用 Key 受服务范围限制；核对 Suno 权限、当前价格和余额。
 3. 图中 **1** 是复制 API Key，**2 Manage Keys** 可管理或创建单独 Key。
 
@@ -34,11 +34,11 @@ HF 界面尚待协调者串行实拍；此处不拿参考图或测试日志冒�
 
 已有任务先用 **2. Retrieve an existing task**，粘贴之前返回的 task ID，点 **Retrieve same task**。它只查询 `/suno/tasks`，不发新生成；收费规则仍以当前接口说明为准。
 
-要在自己确认费用后生成：展开 **Create new music — uses your Ace balance**，选准确模型，保留 Instrumental（纯音乐）勾选，输入 `A gentle instrumental piano melody for a sunrise, no vocals.`。检查[价格与余额](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=sunohuggingface_zh_first_run)后勾选费用确认，点 **Generate once — uses Ace balance**。只提交一次，不自动重试、不换模型。此简洁模式用 prompt，最多500字符，不混入自定义歌词参数。
+要在自己确认费用后生成：展开 **Create new music — uses your Ace balance**，选准确模型，保留 Instrumental（纯音乐）勾选，输入 `A gentle instrumental piano melody for a sunrise, no vocals.`。检查[价格与余额](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen)后勾选费用确认，点 **Generate once — uses Ace balance**。只提交一次，不自动重试、不换模型。此简洁模式用 prompt，最多500字符，不混入自定义歌词参数。
 
 接受请求通常只返回 pending 和任务 ID，不是完成；ID 自动填到查询框。保存 ID，每次间隔至少15秒点 **Retrieve same task**。未终结时隐藏预览音频链接，不因 HTTP 200 就标成功。明确终态成功才展示播放控件和最终链接；失败保留 ID 查历史。
 
-提交后断网可能已经受理，先查 [Ace 应用历史](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=sunohuggingface_zh_history)，不要为轮询重复生成。新标签页不知道上一次提交，也要先查历史。只有终态或人工核对不确定请求后，才能用 **I reviewed history — prepare another task** 开始下一次。
+提交后断网可能已经受理，先查 [Ace 应用历史](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen)，不要为轮询重复生成。新标签页不知道上一次提交，也要先查历史。只有终态或人工核对不确定请求后，才能用 **I reviewed history — prepare another task** 开始下一次。
 
 ## 5. 常见问题与账单
 
@@ -53,7 +53,7 @@ HF 界面尚待协调者串行实拍；此处不拿参考图或测试日志冒�
 
 ## 开发与发布
 
-`npm test` 跑 Node 默认发现测试，`npm run check` 检查入口和四项 UTM。`python3 scripts/package_space.py` 只打包，不上传、不部署。HF 现有组织、只限目标 Space 的凭据与审核门槛见 [PUBLISHING.md](../docs/PUBLISHING.md)。不为数量批量复制同类 Space。
+`npm test` 跑 Node 默认发现测试，`npm run check` 检查入口和三项 UTM。`python3 scripts/package_space.py` 只打包，不上传、不部署。HF 现有组织、只限目标 Space 的凭据与审核门槛见 [PUBLISHING.md](../docs/PUBLISHING.md)。不为数量批量复制同类 Space。
 
 ## 其余四个独立服务入口
 

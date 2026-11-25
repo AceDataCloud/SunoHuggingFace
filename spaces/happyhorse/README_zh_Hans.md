@@ -1,6 +1,6 @@
 # HappyHorse by Ace Data Cloud：Hugging Face独立Space候选
 
-这是Ace Data Cloud独立提供的HappyHorse集成，不冒充服务品牌或HF官方产品。**源码已合并，2026-10-19已发布GitHub v0.2.0独立包；仍未发布HF，HF安装URL/版本未知，未真实生成或验证账单。** 共用单一源码底座，但原生参数、动作与结果展示按服务分别实现，不是只换名字的Suno表单。[English](README.md) · [当前价格](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=happyhorsehuggingface_readme_zh_pricing)。
+这是Ace Data Cloud独立提供的HappyHorse集成，不冒充服务品牌或HF官方产品。**源码已合并，2026-10-19已发布GitHub v0.2.0独立包；仍未发布HF，HF安装URL/版本未知，未真实生成或验证账单。** 共用单一源码底座，但原生参数、动作与结果展示按服务分别实现，不是只换名字的Suno表单。[English](README.md) · [当前价格](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen)。
 
 ## 1. 官方安装入口
 
@@ -8,7 +8,7 @@
 
 ## 2. 注册登录和专用Token
 
-打开 [Ace Applications](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=happyhorsehuggingface_readme_zh_api_key) 注册/登录；找 **General application**，没有则先初始化。核HappyHorse权限、当前价格/余额和Key到期。复制标记1的API Key，或Manage Keys标记2创建单独Key。
+打开 [Ace Applications](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen) 注册/登录；找 **General application**，没有则先初始化。核HappyHorse权限、当前价格/余额和Key到期。复制标记1的API Key，或Manage Keys标记2创建单独Key。
 
 ![真实已脱敏控制台：复制或管理Token](../../assets/get-api-key-en.png)
 
@@ -32,7 +32,7 @@
 
 有旧任务先选 **2. Retrieve the same existing task**，填Ace返回的task ID，点Retrieve same task；仅查 `/happyhorse/tasks` 的retrieve，不发新生成。不要把data里供应端ID当Ace task ID。
 
-要新生成/编辑先展开费用面板，选mode/model和对应参数，核[当前价和余额](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=happyhorsehuggingface_readme_zh_first_run)，勾费用/素材权限确认，点Submit once。只发一次async请求，pending不是成功；保存ID。处理中和不确定受理结果会阻止新生成，断网/5xx/异常2xx先查 [应用历史](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen&utm_content=happyhorsehuggingface_readme_zh_history)，不能为轮询重生成。刷新页或新标签不了解旧任务，也要先查历史。
+要新生成/编辑先展开费用面板，选mode/model和对应参数，核[当前价和余额](https://platform.acedata.cloud/models?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen)，勾费用/素材权限确认，点Submit once。只发一次async请求，pending不是成功；保存ID。处理中和不确定受理结果会阻止新生成，断网/5xx/异常2xx先查 [应用历史](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen)，不能为轮询重生成。刷新页或新标签不了解旧任务，也要先查历史。
 
 同ID查询间隔至少15秒；pending、预览URL、HTTP200不等于终态。明确成功才展示视频播放器和最终链接；失败优先。图片Base64只接受合法PNG/JPEG/WebP，不能展示SVG/脚本。按task/trace核实际账单；未证明最终媒体可达、唯一扣费或注册/营收。
 

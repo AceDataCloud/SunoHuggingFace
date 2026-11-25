@@ -23,9 +23,9 @@ for slug, name in names.items():
                 assert (folder / unquote(parsed.path)).is_file(), (doc, target)
             if parsed.netloc == "platform.acedata.cloud":
                 qs = parse_qs(parsed.query)
-                assert set(contract["utm_keys"]) <= qs.keys(), target
+                assert {k for k in qs if k.startswith("utm_")} == set(contract["utm_keys"]), target
                 assert qs["utm_source"] == ["huggingface"]
                 for key in contract["utm_keys"]:
                     assert re.fullmatch(contract["tag_pattern"], qs[key][0])
                 count += 1
-print(f"{len(names)} independent HF manifests/guides and {count} four-label CTA links validated.")
+print(f"{len(names)} independent HF manifests/guides and {count} three-label CTA links validated.")
