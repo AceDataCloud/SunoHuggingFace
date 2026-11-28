@@ -27,7 +27,7 @@ After separately authorized publication, search [HF Spaces for Seedance](https:/
 
 ## 2. Register/sign in and get an application API Token
 
-Open [Ace Applications](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen); register or sign in. Find **General application** or initialize it if absent. Check Seedance service access, Allowed APIs, expiry, current price and balance. Copy the Token using the copy icon marked1, or **Manage Keys** marked2 for a dedicated credential.
+Open [Ace Applications](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen); register or sign in. Find **General application**. Check Seedance service access, Allowed APIs, expiry, current price and balance. Copy the Token using the copy icon marked1, or **Manage Keys** marked2 for a dedicated credential.
 
 ![Actual redacted Ace Console copy/manage API Key](../../assets/get-api-key-en.png)
 

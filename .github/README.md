@@ -35,7 +35,7 @@ A public Static Space can be opened directly and duplicated with **⋮ → Dupli
 ## 2. Get an Ace application API token
 
 1. Register or sign in at [Ace Data Cloud → Applications](https://platform.acedata.cloud/console/applications?utm_source=github&utm_medium=referral&utm_campaign=evergreen).
-2. Open **General application**. If absent, choose **Initialize General Application**. A general key can use the services your account is entitled to; a dedicated application's key is limited to its service. Check **Suno** access, current pricing and balance.
+2. Open **General application**. A general key can use the services your account is entitled to; a dedicated application's key is limited to its service. Check **Suno** access, current pricing and balance.
 3. Copy the API Key using the icon marked **1**, or open **Manage Keys** marked **2** to create a separate key.
 
 ![Actual Ace Console: copy a redacted API key or open Manage Keys](../assets/get-api-key-en.png)

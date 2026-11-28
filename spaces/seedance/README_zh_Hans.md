@@ -8,7 +8,7 @@
 
 ## 2. 注册登录和专用Token
 
-打开 [Ace Applications](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen) 注册/登录；找 **General application**，没有则先初始化。核Seedance权限、当前价格/余额和Key到期。复制标记1的API Key，或Manage Keys标记2创建单独Key。
+打开 [Ace Applications](https://platform.acedata.cloud/console/applications?utm_source=huggingface&utm_medium=referral&utm_campaign=evergreen) 注册/登录；找 **General application**。核Seedance权限、当前价格/余额和Key到期。复制标记1的API Key，或Manage Keys标记2创建单独Key。
 
 ![真实已脱敏控制台：复制或管理Token](../../assets/get-api-key-en.png)
 

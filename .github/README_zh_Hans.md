@@ -13,7 +13,7 @@
 ## 2. 获取正确 API Token
 
 1. 打开 [Ace Data Cloud → Applications](https://platform.acedata.cloud/console/applications?utm_source=github&utm_medium=referral&utm_campaign=evergreen)，注册或登录。
-2. 找到 **General application**。不存在时先点 **Initialize General Application**。通用 Key 可调用账户有权使用的服务，专用应用 Key 受服务范围限制；核对 Suno 权限、当前价格和余额。
+2. 找到 **General application**。通用 Key 可调用账户有权使用的服务，专用应用 Key 受服务范围限制；核对 Suno 权限、当前价格和余额。
 3. 图中 **1** 是复制 API Key，**2 Manage Keys** 可管理或创建单独 Key。
 
 ![真实 Ace 控制台：复制或管理已脱敏的 Key](../assets/get-api-key-en.png)
